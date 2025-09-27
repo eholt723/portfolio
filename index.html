@@ -4,18 +4,90 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Eric Holt — Portfolio</title>
-  <link rel="stylesheet" href="assets/style.css" />
   <meta name="description" content="Entry-Level Programmer · Python · QA/Automation · CIS student" />
   <link rel="icon" href="images/favicon.png" />
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-F76L25MKH2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-F76L25MKH2');
-</script>
 
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F76L25MKH2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F76L25MKH2');
+  </script>
+
+  <!-- Apply saved or system theme before paint -->
+  <script>
+    (function () {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = saved || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
+  <style>
+    /* -------- Theme tokens -------- */
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --fg: #0b0b0c;
+      --muted: #666a6e;
+      --card: #f6f7f9;
+      --border: #e5e7eb;
+      --link: #0b72ff;
+      --link-hover: #0552c3;
+      --accent: #0ea5e9;
+      --shadow: 0 1px 2px rgba(0,0,0,.06), 0 4px 12px rgba(0,0,0,.04);
+    }
+    :root[data-theme="dark"] {
+      --bg: #0b0d10;
+      --fg: #e6e8ea;
+      --muted: #9aa1a8;
+      --card: #11151a;
+      --border: #1e242c;
+      --link: #7db3ff;
+      --link-hover: #a8c9ff;
+      --accent: #22d3ee;
+      --shadow: 0 1px 2px rgba(0,0,0,.5), 0 6px 18px rgba(0,0,0,.35);
+    }
+
+    /* -------- Base styles -------- */
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif;
+      line-height: 1.6;
+      background: var(--bg);
+      color: var(--fg);
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { color: var(--link-hover); text-decoration: underline; }
+
+    header { padding: 2.5rem 1rem 1.5rem; text-align: center; }
+    nav a { margin: 0 .6rem; }
+    main { max-width: 900px; margin: 0 auto; padding: 0 1rem 2rem; }
+    h1, h2, h3 { line-height: 1.2; margin: .2rem 0 .6rem; }
+
+    article {
+      padding: 1rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin: 1rem 0;
+      box-shadow: var(--shadow);
+    }
+
+    footer { text-align: center; padding: 2rem 1rem; color: var(--muted); }
+
+    /* Toggle button */
+    .button {
+      display:inline-flex; align-items:center; gap:.5rem;
+      border:1px solid var(--border); background:var(--card); color:var(--fg);
+      padding:.5rem .8rem; border-radius:999px; cursor:pointer;
+    }
+    .button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  </style>
 </head>
 <body>
   <header>
@@ -27,6 +99,14 @@
       <a href="#contact">Contact</a>
       <a href="Eric_Holt_Resume.pdf" target="_blank" rel="noopener">Résumé</a>
     </nav>
+
+    <!-- Theme toggle -->
+    <div style="margin-top:1rem;">
+      <button id="themeToggle" class="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <span aria-hidden="true">🌓</span>
+        <span id="themeLabel">Dark mode</span>
+      </button>
+    </div>
   </header>
 
   <main>
@@ -36,19 +116,19 @@
         <h3>Weather Web App</h3>
         <p>Flask · Bootstrap · Chart.js</p>
         <p><a href="https://your-render-app.onrender.com" target="_blank" rel="noopener">Live demo</a> ·
-           <a href="https://github.com/ericholt/weather-app" target="_blank" rel="noopener">Code</a></p>
+           <a href="https://github.com/eholt723/weather-app" target="_blank" rel="noopener">Code</a></p>
       </article>
       <article>
         <h3>Flask Chatbot</h3>
         <p>Python · Cohere API · Render</p>
         <p><a href="https://your-chatbot.onrender.com" target="_blank" rel="noopener">Live demo</a> ·
-           <a href="https://github.com/ericholt/flask-chatbot" target="_blank" rel="noopener">Code</a></p>
+           <a href="https://github.com/eholt723/flask-chatbot" target="_blank" rel="noopener">Code</a></p>
       </article>
       <article>
         <h3>ESP32 Simulation</h3>
         <p>Wokwi · PlatformIO · C++</p>
         <p><a href="https://wokwi.com/projects/your-id" target="_blank" rel="noopener">Simulation</a> ·
-           <a href="https://github.com/ericholt/esp32-sim" target="_blank" rel="noopener">Code</a></p>
+           <a href="https://github.com/eholt723/esp32-sim" target="_blank" rel="noopener">Code</a></p>
       </article>
     </section>
 
@@ -62,11 +142,39 @@
       <h2>Contact</h2>
       <p><a href="mailto:you@example.com">you@example.com</a> ·
          <a href="https://www.linkedin.com/in/your-handle/" target="_blank" rel="noopener">LinkedIn</a> ·
-         <a href="https://github.com/ericholt" target="_blank" rel="noopener">GitHub</a></p>
+         <a href="https://github.com/eholt723" target="_blank" rel="noopener">GitHub</a></p>
     </section>
   </main>
 
   <footer><small>© <span id="y"></span> Eric Holt</small></footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+  <script>
+    // Update year in footer
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Theme toggle logic
+    (function () {
+      const root = document.documentElement;
+      const btn = document.getElementById('themeToggle');
+      const label = document.getElementById('themeLabel');
+
+      function setTheme(next) {
+        root.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        label.textContent = next === 'dark' ? 'Light mode' : 'Dark mode';
+      }
+      function currentTheme() {
+        return root.getAttribute('data-theme') || 'light';
+      }
+
+      // Initialize label
+      label.textContent = currentTheme() === 'dark' ? 'Light mode' : 'Dark mode';
+
+      btn.addEventListener('click', () => {
+        const next = currentTheme() === 'dark' ? 'light' : 'dark';
+        setTheme(next);
+      });
+    })();
+  </script>
 </body>
 </html>
