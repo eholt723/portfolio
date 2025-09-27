@@ -44,30 +44,22 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55); /* adjust opacity for brightness */
-  z-index: 0;  /* sits above background, below content */
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 0;
   pointer-events: none;
 }
 
-/* ensure content is above overlay */
 header, main, footer { position: relative; z-index: 1; }
 
 a { color: var(--link); text-decoration: none; }
 a:hover { color: var(--link-hover); text-decoration: underline; }
 
 header {
-  position: relative;               /* needed for top-left toggle positioning */
+  position: relative;
   padding: 2.5rem 1rem 1.5rem;
   text-align: center;
-  background: rgba(0, 0, 0, 0.4);   /* semi-transparent background for contrast */
+  background: rgba(0, 0, 0, 0.4);
   border-radius: 0 0 12px 12px;
-}
-
-/* top-left theme toggle */
-.theme-toggle-container {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
 }
 
 nav a { margin: 0 .6rem; }
@@ -90,8 +82,8 @@ article {
   border-radius: 12px;
   margin: 1rem 0;
   box-shadow: var(--shadow);
-  backdrop-filter: blur(6px);        /* frosted glass effect */
-  background: rgba(20, 20, 20, 0.7); /* transparent background */
+  backdrop-filter: blur(6px);
+  background: rgba(20, 20, 20, 0.7);
 }
 
 /* -------- Project two-column layout -------- */
@@ -100,7 +92,7 @@ article {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  flex-wrap: wrap; /* stack on small screens */
+  flex-wrap: wrap;
 }
 
 .project-text {
@@ -122,24 +114,6 @@ footer {
   color: var(--muted);
   background: rgba(0, 0, 0, 0.4);
   border-radius: 12px 12px 0 0;
-}
-
-/* -------- Toggle button -------- */
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--border);
-  background: var(--card);
-  color: var(--fg);
-  font-size: 1.2rem;   /* makes the 🌓 a bit bigger */
-  padding: .4rem .6rem;
-  border-radius: 999px;
-  cursor: pointer;
-}
-.button:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
 }
 
 /* -------- Small screens polish -------- */
