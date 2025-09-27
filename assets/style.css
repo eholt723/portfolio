@@ -1,0 +1,9 @@
+:root { --max: 900px; --pad: 1rem; }
+* { box-sizing: border-box; }
+body { font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; margin:0; line-height:1.6; }
+header { padding: calc(var(--pad) * 2) var(--pad); text-align:center; }
+nav a { margin: 0 .6rem; text-decoration:none; }
+main { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad) var(--pad); }
+h1,h2 { line-height:1.2 }
+article { padding: 1rem; border: 1px solid #ddd; border-radius: 10px; margin: 1rem 0; }
+footer { text-align:center; padding: 2rem 1rem; color:#666; }
