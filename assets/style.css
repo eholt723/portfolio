@@ -1,6 +1,6 @@
-/* Base tokens */
+/* -------- Theme tokens -------- */
 :root {
-  color-scheme: light dark;                    /* hints to the browser */
+  color-scheme: light dark;
   --bg: #ffffff;
   --fg: #0b0b0c;
   --muted: #666a6e;
@@ -12,7 +12,6 @@
   --shadow: 0 1px 2px rgba(0,0,0,.06), 0 4px 12px rgba(0,0,0,.04);
 }
 
-/* Dark palette overrides when <html data-theme="dark"> */
 :root[data-theme="dark"] {
   --bg: #0b0d10;
   --fg: #e6e8ea;
@@ -25,11 +24,10 @@
   --shadow: 0 1px 2px rgba(0,0,0,.5), 0 6px 18px rgba(0,0,0,.35);
 }
 
-/* Global styles (use tokens) */
+/* -------- Base styles -------- */
 * { box-sizing: border-box; }
-html, body { height: 100%; }
+html, body { height: 100%; margin: 0; }
 body {
-  margin: 0;
   font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif;
   line-height: 1.6;
   background: var(--bg);
@@ -39,10 +37,25 @@ body {
 a { color: var(--link); text-decoration: none; }
 a:hover { color: var(--link-hover); text-decoration: underline; }
 
-header { padding: 2.5rem 1rem 1.5rem; text-align: center; }
-nav a { margin: 0 .6rem; }
-main { max-width: 900px; margin: 0 auto; padding: 0 1rem 2rem; }
-h1, h2, h3 { line-height: 1.2; margin: .2rem 0 .6rem; }
+header {
+  padding: 2.5rem 1rem 1.5rem;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 .6rem;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+  margin: .2rem 0 .6rem;
+}
 
 article {
   padding: 1rem;
@@ -53,22 +66,47 @@ article {
   box-shadow: var(--shadow);
 }
 
-footer { text-align: center; padding: 2rem 1rem; color: var(--muted); }
+/* -------- Project two-column layout -------- */
+.project {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap; /* stack on small screens */
+}
 
-/* Buttons (toggle) */
+.project-text {
+  flex: 1 1 55%;
+  min-width: 260px;
+}
+
+.project-img {
+  flex: 1 1 40%;
+  max-width: 350px;
+  border-radius: 12px;
+  display: block;
+}
+
+/* -------- Footer -------- */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--muted);
+}
+
+/* -------- Toggle button -------- */
 .button {
-  display:inline-flex; align-items:center; gap:.5rem;
-  border:1px solid var(--border); background:var(--card); color:var(--fg);
-  padding:.5rem .8rem; border-radius:999px; cursor:pointer;
-}
-.button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-
-/* Optional: code blocks */
-pre, code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  background: var(--card);
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  background: var(--card);
+  color: var(--fg);
+  padding: .5rem .8rem;
+  border-radius: 999px;
+  cursor: pointer;
 }
-pre { padding: .8rem; overflow:auto; }
-code { padding: .1rem .3rem; }
+.button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
