@@ -1,78 +1,76 @@
-/* -------- Theme tokens (light defaults) -------- */
+/* -------- Minimal tokens (link colors) -------- */
 :root {
-  color-scheme: light dark;
-  --bg: #ffffff;
-  --fg: #0b0b0c;
-  --muted: #666a6e;
-  --card: #f6f7f9;
-  --border: #e5e7eb;
-  --link: #0b72ff;
-  --link-hover: #0552c3;
-  --accent: #0ea5e9;
-  --shadow: 0 1px 2px rgba(0,0,0,.06), 0 4px 12px rgba(0,0,0,.04);
+  --link: #8ec5ff;
+  --link-hover: #c3e0ff;
 }
 
-/* -------- Base styles -------- */
+/* -------- Base / layout -------- */
 * { box-sizing: border-box; }
 html, body { height: 100%; margin: 0; }
 
 body {
   font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif;
   line-height: 1.6;
-  color: var(--fg);
 
-  /* Background image with overlay */
-  background: var(--bg) url("../images/bg3.jpg") no-repeat center center fixed;
+  /* Make all default text WHITE */
+  color: #ffffff;
+
+  /* Background image */
+  background: #000 url("../images/bg3.jpg") no-repeat center center fixed;
   background-size: cover;
   position: relative;
 }
 
-/* Dark overlay for readability */
+/* Dark overlay so text stays readable on bright areas */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45); /* slightly lighter than before */
-  z-index: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 0;             /* below content */
   pointer-events: none;
 }
 
-/* ensure content is above overlay */
+/* Ensure page content sits above overlay */
 header, main, footer { position: relative; z-index: 1; }
 
+/* Headings & basic text (explicitly white for safety) */
+h1, h2, h3, h4, h5, h6,
+p, li, small { color: #ffffff; }
+
+/* Links stay blue for contrast */
 a { color: var(--link); text-decoration: none; }
 a:hover { color: var(--link-hover); text-decoration: underline; }
 
+/* -------- Header -------- */
 header {
-  position: relative;
   padding: 2.5rem 1rem 1.5rem;
   text-align: center;
   background: rgba(0, 0, 0, 0.35);
   border-radius: 0 0 12px 12px;
 }
 
+/* Nav spacing */
 nav a { margin: 0 .6rem; }
 
+/* -------- Main container -------- */
 main {
   max-width: 900px;
   margin: 0 auto;
   padding: 0 1rem 2rem;
 }
 
-h1, h2, h3 {
-  line-height: 1.2;
-  margin: .2rem 0 .6rem;
-}
+h1, h2, h3 { line-height: 1.2; margin: .2rem 0 .6rem; }
 
+/* -------- Cards / articles -------- */
 article {
   padding: 1rem;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
   margin: 1rem 0;
-  box-shadow: var(--shadow);
+  border-radius: 12px;
+  background: rgba(20, 20, 20, 0.72);                /* dark “glass” */
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 1px 2px rgba(0,0,0,.5), 0 6px 18px rgba(0,0,0,.35);
   backdrop-filter: blur(6px);
-  background: rgba(20, 20, 20, 0.7);
 }
 
 /* -------- Project two-column layout -------- */
@@ -81,44 +79,22 @@ article {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* stack on small screens */
 }
 
-.project-text {
-  flex: 1 1 55%;
-  min-width: 260px;
-}
-
-.project-img {
-  flex: 1 1 40%;
-  max-width: 300px;
-  border-radius: 12px;
-  display: block;
-}
+.project-text { flex: 1 1 55%; min-width: 260px; }
+.project-img  { flex: 1 1 40%; max-width: 300px; border-radius: 12px; display: block; }
 
 /* -------- Footer -------- */
 footer {
   text-align: center;
   padding: 2rem 1rem;
-  color: var(--muted);
-  background: rgba(0, 0, 0, 0.35);
+  color: rgba(255,255,255,0.85);      /* readable white */
+  background: rgba(0,0,0,0.35);
   border-radius: 12px 12px 0 0;
 }
 
 /* -------- Small screens polish -------- */
 @media (max-width: 480px) {
   .project-img { max-width: 100%; }
-}
-
-/* ===== Force DARK palette by default (no HTML changes needed) ===== */
-:root {
-  --bg: #0b0d10;
-  --fg: #e6e8ea;
-  --muted: #9aa1a8;
-  --card: #11151a;
-  --border: #1e242c;
-  --link: #7db3ff;
-  --link-hover: #a8c9ff;
-  --accent: #22d3ee;
-  --shadow: 0 1px 2px rgba(0,0,0,.5), 0 6px 18px rgba(0,0,0,.35);
 }
