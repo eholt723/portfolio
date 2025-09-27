@@ -88,7 +88,7 @@ article {
 
 .project-img {
   flex: 1 1 40%;
-  max-width: 300px;   /* your tweak kept */
+  max-width: 300px;
   border-radius: 12px;
   display: block;
 }
@@ -104,11 +104,12 @@ footer {
 .button {
   display: inline-flex;
   align-items: center;
-  gap: .5rem;
+  justify-content: center;
   border: 1px solid var(--border);
   background: var(--card);
   color: var(--fg);
-  padding: .5rem .8rem;
+  font-size: 1.2rem;   /* makes the 🌓 a bit bigger */
+  padding: .4rem .6rem;
   border-radius: 999px;
   cursor: pointer;
 }
@@ -117,7 +118,7 @@ footer {
   outline-offset: 2px;
 }
 
-/* -------- Small screens polish (optional) -------- */
+/* -------- Small screens polish -------- */
 @media (max-width: 480px) {
   .project-img { max-width: 100%; }
 }
