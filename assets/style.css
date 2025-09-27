@@ -21,7 +21,7 @@ body {
   position: relative;
 }
 
-/* Dark overlay so text stays readable on bright areas */
+/* Dark overlay for readability */
 body::before {
   content: "";
   position: fixed;
@@ -90,11 +90,22 @@ footer {
   text-align: center;
   padding: 2rem 1rem;
   color: rgba(255,255,255,0.85);      /* readable white */
-  background: rgba(0,0,0,0.35);
+  background: rgba(0, 0, 0, 0.35);
   border-radius: 12px 12px 0 0;
 }
 
 /* -------- Small screens polish -------- */
 @media (max-width: 480px) {
   .project-img { max-width: 100%; }
+}
+
+/* -------- Hover zoom effect on project images -------- */
+.project-img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.project-img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
 }
