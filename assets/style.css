@@ -38,13 +38,19 @@ a { color: var(--link); text-decoration: none; }
 a:hover { color: var(--link-hover); text-decoration: underline; }
 
 header {
+  position: relative;               /* needed for top-left toggle positioning */
   padding: 2.5rem 1rem 1.5rem;
   text-align: center;
 }
 
-nav a {
-  margin: 0 .6rem;
+/* top-left theme toggle */
+.theme-toggle-container {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
 }
+
+nav a { margin: 0 .6rem; }
 
 main {
   max-width: 900px;
@@ -82,7 +88,7 @@ article {
 
 .project-img {
   flex: 1 1 40%;
-  max-width: 300px;
+  max-width: 300px;   /* your tweak kept */
   border-radius: 12px;
   display: block;
 }
@@ -109,4 +115,9 @@ footer {
 .button:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
+}
+
+/* -------- Small screens polish (optional) -------- */
+@media (max-width: 480px) {
+  .project-img { max-width: 100%; }
 }
