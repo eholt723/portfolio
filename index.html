@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Eric Holt — Portfolio</title>
   <meta name="description" content="Software Developer · AI/Machine Learning · Python-PCEP Certified" /> 
-  <link rel="icon" type="image/png"href="images/glow_round_favicon.png" />
+  <link rel="icon" type="image/png" href="images/glow_round_favicon.png" />
 
   <!-- Link to external CSS -->
   <link rel="stylesheet" href="assets/style.css" />
@@ -35,7 +35,27 @@
     <section id="projects">
       <h2>Featured Projects</h2>
 
-      <!-- 0) TRANSPORTATION LLM -->
+      <!-- 0) AI TUTOR — LANGGRAPH + LORA -->
+      <article class="project">
+        <div class="project-text">
+          <h3>AI Tutor — LangGraph + LoRA (TinyLlama)</h3>
+          <p>Python · LangGraph · LoRA Fine-Tuning · llama.cpp · Azure Container Apps</p>
+          <p>
+            <a href="https://eholt723.github.io/ai-tutor-langgraph/" target="_blank" rel="noopener">Live demo</a> ·
+            <a href="https://github.com/eholt723/ai-tutor-langgraph" target="_blank" rel="noopener">Code</a> ·
+            <a href="https://github.com/eholt723/ai-tutor-langgraph#readme" target="_blank" rel="noopener">README</a>
+          </p>
+        </div>
+        <a href="https://eholt723.github.io/ai-tutor-langgraph/" target="_blank" rel="noopener">
+          <img
+            src="images/AI-Tutor-LangGraph+LoRA.png"
+            alt="Screenshot of AI Tutor LangGraph + LoRA demo"
+            class="project-img"
+          />
+        </a>
+      </article>
+
+      <!-- 1) TRANSPORTATION LLM -->
       <article class="project">
         <div class="project-text">
           <h3>Transportation-LLM — Local AI Chat via WebGPU</h3>
@@ -51,7 +71,7 @@
         </a>
       </article>
 
-      <!-- 1) WAREHOUSEBOT-RL -->   
+      <!-- 2) WAREHOUSEBOT-RL -->   
       <article class="project">
         <div class="project-text">
           <h3>WarehouseBot-RL — Autonomous Picking Simulation</h3>
@@ -67,7 +87,7 @@
         </a>
       </article>
 
-      <!-- 2) LABOR MAP -->   
+      <!-- 3) LABOR MAP -->   
       <article class="project">
         <div class="project-text">
           <h3>Tech Labor Insights</h3>
@@ -83,7 +103,7 @@
         </a>
       </article>
 
-      <!-- 3) WEATHER WEB APP -->    
+      <!-- 4) WEATHER WEB APP -->    
       <article class="project">
         <div class="project-text">
           <h3>Weather Web App</h3>
@@ -98,7 +118,7 @@
         </a>
       </article>
 
-      <!-- 4) FLASK CHAT BOT -->  
+      <!-- 5) FLASK CHAT BOT -->  
       <article class="project">
         <div class="project-text">
           <h3>Flask Chatbot</h3>
@@ -113,7 +133,7 @@
         </a>
       </article>
 
-      <!-- 5) IMAGE CLASSIFIER -->  
+      <!-- 6) IMAGE CLASSIFIER -->  
       <article class="project">
         <div class="project-text">
           <h3>Image Classifier</h3>
@@ -157,11 +177,9 @@
     <p><small>Crafted by Human Intelligence in Visual Studio Code</small></p>
     <p><small>© <span id="y"></span> Eric Holt</small></p>
   </footer>
+
   <script>
-    // Update year in footer  
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
-
-
