@@ -4,9 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Eric Holt — Portfolio</title>
-  <meta name="description" content="Software Developer · AI/Machine Learning · Python-PCEP Certified" /> 
+  <meta name="description" content="Software Developer · AI Systems Engineer · Python-Certified" /> 
   <link rel="icon" type="image/png" href="images/glow_round_favicon.png" />
-
   <link rel="stylesheet" href="assets/style.css" />
 
   <!-- Google Analytics (GA4) -->
@@ -19,217 +18,202 @@
   </script>
 </head>
 <body>
-  <header>
-    <h1>Eric Holt</h1>
-    <p>Software Developer · AI/Machine Learning · Python-Certified</p>
-    <nav>
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-      <a href="Eric_Holt_Resume.pdf" target="_blank" rel="noopener">Resumé</a>
-    </nav>
-  </header>
+<header>
+  <h1>Eric Holt</h1>
+  <p>Software Developer · AI Systems · Machine Learning</p>
+  <nav>
+    <a href="#projects">Projects</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="Eric_Holt_Resume.pdf" target="_blank" rel="noopener">Resumé</a>
+  </nav>
+</header>
 
-  <main>
-    <section id="projects">
-      <h2>Featured Projects</h2>
+<main>
+<section id="projects">
+<h2>Featured Projects</h2>
 
-      <!-- 0) AGENTFLOW — AGENTIC ECOSYSTEM -->
-      <article class="project">
-        <div class="project-text">
-          <h3>AgentFlow — Agentic Ecosystem — Autonomous Business Assistant (In Development)</h3>
-          <p>Python · FastAPI · LangGraph · n8n · Docker · LoRA / Fine-Tuned LLM</p>
-          <p>
-            A modular agentic architecture integrating custom model serving, graph-based reasoning,
-            and event-driven automation into a composable multi-service execution stack.
-          </p>
-          <p>
-            Custom LLM served via FastAPI · LangGraph multi-step planning + tool selection ·
-            n8n event-driven workflows · Dockerized microservice architecture ·
-            Structured logging + retry/fallback design
-          </p>
-          <p>
-            <a href="https://github.com/users/eholt723/projects/3/views/1?verticalGroupedBy%5BcolumnId%5D=Status" target="_blank" rel="noopener">
-              Development Board
-            </a>
-          </p>
-        </div>
-        <a href="https://github.com/users/eholt723/projects/3/views/1?verticalGroupedBy%5BcolumnId%5D=Status" target="_blank" rel="noopener">
-          <img
-            src="images/AgentFlowBoard.png"
-            alt="Screenshot of AgentFlow GitHub development board"
-            class="project-img"
-          />
-        </a>
-      </article>
+<!--0) AGENTFLOW -->
+<article class="project">
+  <div class="project-text">
+    <h3>AgentFlow — Agentic Ecosystem — Autonomous Business Assistant (In Development)</h3>
+    <p>Python · FastAPI · LangGraph · n8n · Docker · LoRA / Fine-Tuned LLM</p>
+    <p>
+      A modular agentic architecture integrating custom model serving, graph-based reasoning,
+      and event-driven automation into a composable multi-service execution stack.
+    </p>
+    <p>
+      FastAPI LLM inference · LangGraph multi-step planning + tool routing ·
+      n8n workflow automation · Dockerized services · Structured logging + retry/fallback design
+    </p>
+    <p>
+      <a href="https://github.com/users/eholt723/projects/3/views/1?verticalGroupedBy%5BcolumnId%5D=Status" target="_blank">Development Board</a>
+    </p>
+  </div>
+  <a href="https://github.com/users/eholt723/projects/3/views/1?verticalGroupedBy%5BcolumnId%5D=Status" target="_blank">
+    <img src="images/AgentFlowBoard.png" alt="AgentFlow Board" class="project-img"/>
+  </a>
+</article>
 
-      <!-- 1) GET SET WEDDING -->
-      <article class="project">
-        <div class="project-text">
-          <h3>Get Set Wedding — Production SaaS Planning Platform</h3>
-          <p>React · TypeScript · Supabase · Stripe · Node</p>
-          <p>
-            A production-grade SaaS wedding planning platform featuring authenticated dashboards, subscription-based access control, and persistent user state.
-          </p>
-          <p>
-            Authenticated dashboards (demo + real accounts) · Stripe subscriptions + plan gating · Supabase auth/RLS + persistence · Refresh-safe session handling · Admin route RBAC · Guarded AI planning tools
-          </p>
-          <p>
-            <a href="https://getsetwedding.com" target="_blank" rel="noopener">View app</a> ·
-            <a href="https://gist.github.com/eholt723/6534f912080dddfb8b3a9cc6176a90ac" target="_blank" rel="noopener">README</a>
-          </p>
-        </div>
-        <a href="https://getsetwedding.com" target="_blank" rel="noopener">
-          <img src="images/gsw.png" alt="Screenshot of Get Set Wedding dashboard" class="project-img" />
-        </a>
-      </article>
+<!--1) GET SET WEDDING -->
+<article class="project">
+  <div class="project-text">
+    <h3>Get Set Wedding — Production SaaS Planning Platform</h3>
+    <p>React · TypeScript · Supabase · Stripe · Node</p>
+    <p>
+      A production-grade SaaS platform featuring authenticated dashboards, subscription-based access control, and persistent user state.
+    </p>
+    <p>
+      Auth/RLS architecture · Stripe billing + plan gating · Refresh-safe sessions · RBAC admin routing · AI tool guardrails
+    </p>
+    <p>
+      <a href="https://getsetwedding.com" target="_blank">View App</a>
+    </p>
+  </div>
+  <a href="https://getsetwedding.com" target="_blank">
+    <img src="images/gsw.png" class="project-img"/>
+  </a>
+</article>
 
-      <!-- 2) AI TUTOR -->
-      <article class="project">
-        <div class="project-text">
-          <h3>AI Tutor — LangGraph + LoRA (TinyLlama)</h3>
-          <p>Python · LangGraph · LoRA Fine-Tuning · llama.cpp · Azure Container Apps</p>
-          <p>
-            <a href="https://eholt723.github.io/ai-tutor-langgraph/" target="_blank" rel="noopener">Live demo</a> ·
-            <a href="https://github.com/eholt723/ai-tutor-langgraph" target="_blank" rel="noopener">Code</a> ·
-            <a href="https://github.com/eholt723/ai-tutor-langgraph#readme" target="_blank" rel="noopener">README</a>
-          </p>
-        </div>
-        <a href="https://eholt723.github.io/ai-tutor-langgraph/" target="_blank" rel="noopener">
-          <img src="images/AI-Tutor-LangGraph+LoRA.png" alt="AI Tutor demo" class="project-img" />
-        </a>
-      </article>
+<!--2) AI TUTOR -->
+<article class="project">
+  <div class="project-text">
+    <h3>AI Tutor — LangGraph + LoRA (TinyLlama)</h3>
+    <p>Python · LangGraph · LoRA · llama.cpp · Azure</p>
+    <p>
+      A fine-tuned educational assistant leveraging graph-based reasoning and lightweight quantized inference.
+    </p>
+    <p>
+      LoRA training pipeline · Graph orchestration · Quantized model serving · Container deployment
+    </p>
+    <p>
+      <a href="https://github.com/eholt723/ai-tutor-langgraph" target="_blank">Code</a>
+    </p>
+  </div>
+  <a href="https://github.com/eholt723/ai-tutor-langgraph" target="_blank">
+    <img src="images/AI-Tutor-LangGraph+LoRA.png" class="project-img"/>
+  </a>
+</article>
 
-      <!-- 3) TRANSPORTATION LLM -->
-      <article class="project">
-        <div class="project-text">
-          <h3>Transportation-LLM — Local AI Chat via WebGPU</h3>
-          <p>WebGPU · TypeScript · Vite · RAG · MLC-AI</p>
-          <p>
-            <a href="https://eholt723.github.io/transport-llm/" target="_blank" rel="noopener">Live demo</a> ·
-            <a href="https://github.com/eholt723/transport-llm" target="_blank" rel="noopener">Code</a> ·
-            <a href="https://github.com/eholt723/transport-llm#readme" target="_blank" rel="noopener">README</a>
-          </p>
-        </div>
-        <a href="https://eholt723.github.io/transport-llm/" target="_blank" rel="noopener">
-          <img src="images/Transportation-LLM.png" alt="Transportation LLM demo" class="project-img" />
-        </a>
-      </article>
+<!--3) TRANSPORTATION LLM -->
+<article class="project">
+  <div class="project-text">
+    <h3>Transportation-LLM — Local AI Chat via WebGPU</h3>
+    <p>WebGPU · TypeScript · RAG · MLC-AI</p>
+    <p>
+      An in-browser LLM demo running client-side inference with retrieval-augmented generation.
+    </p>
+    <p>
+      WebGPU acceleration · On-device inference · Vector search + prompt augmentation
+    </p>
+    <p>
+      <a href="https://github.com/eholt723/transport-llm" target="_blank">Code</a>
+    </p>
+  </div>
+  <a href="https://github.com/eholt723/transport-llm" target="_blank">
+    <img src="images/Transportation-LLM.png" class="project-img"/>
+  </a>
+</article>
 
-      <!-- 4) WAREHOUSEBOT-RL -->
-      <article class="project">
-        <div class="project-text">
-          <h3>WarehouseBot-RL — Autonomous Picking Simulation</h3>
-          <p>PyTorch · NumPy · Reinforcement Learning (Q-Learning) · Path Optimization</p>
-          <p>
-            <a href="https://eholt723.github.io/warehousebot-rl/" target="_blank" rel="noopener">Live demo</a> ·
-            <a href="https://github.com/eholt723/warehousebot-rl" target="_blank" rel="noopener">Code</a> ·
-            <a href="https://github.com/eholt723/warehousebot-rl#readme" target="_blank" rel="noopener">README</a>
-          </p>
-        </div>
-        <a href="https://eholt723.github.io/warehousebot-rl/" target="_blank" rel="noopener">
-          <img src="images/WarehouseBot-RL.png" alt="WarehouseBot RL simulation" class="project-img" />
-        </a>
-      </article>
+<!--4) WAREHOUSEBOT -->
+<article class="project">
+  <div class="project-text">
+    <h3>WarehouseBot-RL — Autonomous Picking Simulation</h3>
+    <p>PyTorch · Reinforcement Learning · Q-Learning</p>
+    <p>
+      A reinforcement learning agent optimizing warehouse path selection through reward-based learning.
+    </p>
+    <p>
+      Custom environment simulation · Q-learning policy updates · Performance evaluation
+    </p>
+  </div>
+  <a href="https://github.com/eholt723/warehousebot-rl" target="_blank">
+    <img src="images/WarehouseBot-RL.png" class="project-img"/>
+  </a>
+</article>
 
-      <!-- 5) TECH LABOR INSIGHTS -->
-      <article class="project">
-        <div class="project-text">
-          <h3>Tech Labor Insights</h3>
-          <p>Leaflet · Chart.js · TopoJSON · BLS (LAUS/OEWS)</p>
-          <p>
-            <a href="https://eholt723.github.io/labor-map/" target="_blank" rel="noopener">Live demo</a> ·
-            <a href="https://github.com/eholt723/labor-map" target="_blank" rel="noopener">Code</a> ·
-            <a href="https://github.com/eholt723/labor-map#readme" target="_blank" rel="noopener">README</a>
-          </p>
-        </div>
-        <a href="https://eholt723.github.io/labor-map/" target="_blank" rel="noopener">
-          <img src="images/Labor-Map.png" alt="Tech Labor Insights map" class="project-img" />
-        </a>
-      </article>
+<!--5) WEATHER -->
+<article class="project">
+  <div class="project-text">
+    <h3>Weather Web App</h3>
+    <p>Flask · Bootstrap · Chart.js</p>
+    <p>
+      A full-stack weather dashboard integrating third-party APIs with dynamic data visualization.
+    </p>
+    <p>
+      REST API integration · Data parsing · Chart rendering · Cloud deployment
+    </p>
+  </div>
+  <a href="https://github.com/eholt723/weather-app" target="_blank">
+    <img src="images/weather-web-app.png" class="project-img"/>
+  </a>
+</article>
 
-      <!-- 6) WEATHER WEB APP -->
-      <article class="project">
-        <div class="project-text">
-          <h3>Weather Web App</h3>
-          <p>Flask · Bootstrap · Chart.js · Render</p>
-          <p>
-            <a href="https://weather-app-2p8s.onrender.com" target="_blank" rel="noopener">Live demo</a> ·
-            <a href="https://github.com/eholt723/weather-app" target="_blank" rel="noopener">Code</a>
-          </p>
-        </div>
-        <a href="https://weather-app-2p8s.onrender.com" target="_blank" rel="noopener">
-          <img src="images/weather-web-app.png" alt="Weather app" class="project-img" />
-        </a>
-      </article>
+<!--6) FLASK CHATBOT -->
+<article class="project">
+  <div class="project-text">
+    <h3>Flask Chatbot</h3>
+    <p>Python · Cohere API · Render</p>
+    <p>
+      A server-rendered chatbot integrating external LLM APIs with session-based conversational flow.
+    </p>
+    <p>
+      API integration · State handling · Cloud deployment
+    </p>
+  </div>
+  <a href="https://github.com/eholt723/chat-bot" target="_blank">
+    <img src="images/chatbot-demo.png" class="project-img"/>
+  </a>
+</article>
 
-      <!-- 7) FLASK CHATBOT -->
-      <article class="project">
-        <div class="project-text">
-          <h3>Flask Chatbot</h3>
-          <p>Python · Cohere API · Render</p>
-          <p>
-            <a href="https://flask-chat-bot-hac9.onrender.com" target="_blank" rel="noopener">Live demo</a> ·
-            <a href="https://github.com/eholt723/chat-bot" target="_blank" rel="noopener">Code</a>
-          </p>
-        </div>
-        <a href="https://flask-chat-bot-hac9.onrender.com" target="_blank" rel="noopener">
-          <img src="images/chatbot-demo.png" alt="Flask chatbot demo" class="project-img" />
-        </a>
-      </article>
+<!--7) IMAGE CLASSIFIER -->
+<article class="project">
+  <div class="project-text">
+    <h3>Image Classifier</h3>
+    <p>TensorFlow.js · JavaScript</p>
+    <p>
+      A browser-based image classification tool performing real-time client-side inference.
+    </p>
+    <p>
+      Client-side model loading · Real-time prediction · Edge ML deployment
+    </p>
+  </div>
+  <a href="https://github.com/eholt723/tfjs-image-classifier" target="_blank">
+    <img src="images/image-classifier.png" class="project-img"/>
+  </a>
+</article>
 
-      <!-- 8) IMAGE CLASSIFIER -->
-      <article class="project">
-        <div class="project-text">
-          <h3>Image Classifier</h3>
-          <p>TensorFlow.js · JavaScript · HTML/CSS</p>
-          <p>
-            <a href="https://tfjs-image-classifier.onrender.com" target="_blank" rel="noopener">Live demo</a> ·
-            <a href="https://github.com/eholt723/tfjs-image-classifier" target="_blank" rel="noopener">Code</a>
-          </p>
-        </div>
-        <a href="https://tfjs-image-classifier.onrender.com" target="_blank" rel="noopener">
-          <img src="images/image-classifier.png" alt="Image classifier demo" class="project-img" />
-        </a>
-      </article>
-    </section>
+</section>
 
-    <section id="about">
-      <h2>About</h2>
-      <p>
-        I am a software engineer focused on applied AI systems and intelligent architecture design. 
-        My work centers on building end-to-end machine learning pipelines that combine model fine-tuning, 
-        agent orchestration, and production-ready deployment.
-        <br /><br />
-        I design modular, multi-service systems that integrate custom model serving, graph-based reasoning, 
-        workflow automation, and secure persistence layers. My projects span reinforcement learning, 
-        LLM fine-tuning, and full-stack SaaS platforms with authentication, subscription management, 
-        and infrastructure-conscious design.
-        <br /><br />
-        Currently completing my B.S. in Computer Information Systems (Software Programming specialization), 
-        I am developing deep expertise in Python, PyTorch, system orchestration, and AI infrastructure, 
-        with a long-term focus on scalable agent-based systems and production AI deployment.
-      </p>
-    </section>
+<section id="about">
+<h2>About</h2>
+<p>
+I build applied AI systems and production-ready intelligent architectures.
+My work focuses on combining model fine-tuning, agent orchestration, and scalable deployment into modular, multi-service systems.
+<br><br>
+I design architectures that integrate model serving, reasoning graphs, automation workflows, and secure persistence layers, with an emphasis on reliability and real-world usability.
+<br><br>
+Currently completing my B.S. in Computer Information Systems (Software Programming specialization), I am developing deep expertise in Python, PyTorch, and AI infrastructure with a long-term focus on scalable agent-based systems.
+</p>
+</section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>
-        <a href="tel:+18175008000">Call</a> ·
-        <a href="mailto:eholt723@outlook.com">Email</a> ·
-        <a href="https://www.linkedin.com/in/ericholt723/" target="_blank" rel="noopener">LinkedIn</a> ·
-        <a href="https://github.com/eholt723" target="_blank" rel="noopener">GitHub</a>
-      </p>
-    </section>
-  </main>
+<section id="contact">
+<h2>Contact</h2>
+<p>
+<a href="mailto:eholt723@outlook.com">Email</a> ·
+<a href="https://github.com/eholt723" target="_blank">GitHub</a> ·
+<a href="https://www.linkedin.com/in/ericholt723/" target="_blank">LinkedIn</a>
+</p>
+</section>
 
-  <footer>
-    <p><small>Crafted by Human Intelligence in Visual Studio Code</small></p>
-    <p><small>© <span id="y"></span> Eric Holt</small></p>
-  </footer>
+</main>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+<footer>
+<p><small>© <span id="y"></span> Eric Holt</small></p>
+</footer>
+
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
