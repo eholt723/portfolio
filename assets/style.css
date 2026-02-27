@@ -45,21 +45,24 @@ header {
 
 /* -------- Header logo + identity row -------- */
 .header-inner {
-  position: relative;
+  display: flex;
+  align-items: center;
   max-width: 900px;
   margin: 0 auto 1rem;
 }
 
 .header-logo {
-  position: absolute;
-  left: 10rem;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  flex-shrink: 0;
 }
+
+.header-text { flex: 1; text-align: center; }
+
+/* Balances the logo so text stays truly centered */
+.header-spacer { width: 80px; flex-shrink: 0; }
 
 /* Nav spacing */
 nav a { margin: 0 .6rem; }
@@ -109,29 +112,10 @@ footer {
 @media (max-width: 480px) {
   .project-img { max-width: 100%; }
 
-  /* Logo inline with h1 on mobile */
-  .header-inner {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 0.4rem;
-  }
-
-  .header-logo {
-    position: static;
-    transform: none;
-    width: 32px;
-    height: 32px;
-    flex-shrink: 0;
-  }
-
-  /* Subtitle and availability take full row below logo+name */
-  .header-inner p {
-    width: 100%;
-    text-align: center;
-    margin: 0.1rem 0;
-  }
+  /* Mobile: shrink logo, hide spacer, stack text */
+  .header-logo { width: 32px; height: 32px; }
+  .header-spacer { display: none; }
+  .header-text { text-align: center; }
 }
 
 /* -------- Hover zoom effect on project images -------- */
