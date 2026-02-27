@@ -108,14 +108,31 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* -------- Small screens polish -------- */
+/* -------- Small screens -------- */
 @media (max-width: 480px) {
   .project-img { max-width: 100%; }
 
-  /* Mobile: shrink logo, hide spacer, stack text */
+  /* Mobile: 32px logo inline with h1, spacer gone */
   .header-logo { width: 32px; height: 32px; }
   .header-spacer { display: none; }
   .header-text { text-align: center; }
+}
+
+/* -------- Large desktop: logo floats into left margin -------- */
+@media (min-width: 1200px) {
+  /* Text takes full width of header-inner, centered */
+  .header-inner { display: block; }
+  .header-spacer { display: none; }
+
+  /* Pull logo out of flow, center it in the gap left of the cards */
+  .header-logo {
+    position: absolute;
+    left: calc(25% - 285px); /* gap center minus half of 120px logo */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 120px;
+    height: 120px;
+  }
 }
 
 /* -------- Hover zoom effect on project images -------- */
