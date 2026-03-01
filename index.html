@@ -40,7 +40,37 @@
 <section id="projects">
 <h2>Featured Projects</h2>
 
-<!--0) RECONAGENT -->
+<!--0) TRACEAGENT -->
+<article class="project">
+  <div class="project-text">
+    <h3>TraceAgent — Observable Agentic Research Platform</h3>
+    <p>Python · FastAPI · Groq · Tavily · React · PostgreSQL · Docker</p>
+    <p>
+      A custom agentic pipeline with four sequential stages — planner, search, reflection, and synthesis —
+      where the reflection stage explicitly evaluates whether search results are sufficient and conditionally
+      loops back to search with refined queries before proceeding to report generation. Every internal
+      decision is persisted to the database and streamed to the browser in real time via WebSocket.
+    </p>
+    <p>
+      Deployed to Hugging Face Spaces as a single Dockerized service · Multi-stage build bundles React/Vite
+      frontend with FastAPI backend · Neon serverless PostgreSQL for persistent run history · Public activity
+      wall with full step traces · Fork any run with a modified query, lineage tracked · Side-by-side
+      comparison of two runs
+    </p>
+    <p>
+      <a href="https://eholt723-traceagent.hf.space/" target="_blank" rel="noopener">Live Demo</a>
+      ·
+      <a href="https://github.com/eholt723/traceagent" target="_blank" rel="noopener">Code</a>
+      ·
+      <a href="https://github.com/eholt723/traceagent#readme" target="_blank" rel="noopener">README</a>
+    </p>
+  </div>
+  <a href="https://eholt723-traceagent.hf.space/" target="_blank" rel="noopener">
+    <img src="images/TraceAgent.png" alt="TraceAgent Observable Agentic Research Platform" class="project-img"/>
+  </a>
+</article>
+
+<!--1) RECONAGENT -->
 <article class="project">
   <div class="project-text">
     <h3>ReconAgent — Autonomous Web Research Agent</h3>
@@ -67,7 +97,7 @@
   </a>
 </article>
 
-<!--1) AGENTFLOW -->
+<!--2) AGENTFLOW -->
 <article class="project">
   <div class="project-text">
     <h3>AgentFlow – AI-Powered Document Intelligence</h3>
@@ -83,37 +113,15 @@
       SQLite session persistence · n8n webhook integration
     </p>
     <p>
-      <a href="https://agentflow-8lix.onrender.com/" target="_blank" rel="noopener">Live Demo</a>
+      <a href="https://eholt723-agentflow.hf.space/" target="_blank" rel="noopener">Live Demo</a>
       ·
       <a href="https://github.com/eholt723/agentflow" target="_blank" rel="noopener">Code</a>
       ·
       <a href="https://github.com/eholt723/agentflow#readme" target="_blank" rel="noopener">README</a>
     </p>
   </div>
-  <a href="https://agentflow-8lix.onrender.com/" target="_blank" rel="noopener">
+  <a href="https://eholt723-agentflow.hf.space/" target="_blank" rel="noopener">
     <img src="images/AgentFlow.png" alt="AgentFlow AI-Powered Document Intelligence" class="project-img"/>
-  </a>
-</article>
-
-<!--2) GET SET WEDDING -->
-<article class="project">
-  <div class="project-text">
-    <h3>Get Set Wedding — Production SaaS Planning Platform</h3>
-    <p>React · TypeScript · Supabase · Stripe · Node</p>
-    <p>
-      A production-grade SaaS platform featuring authenticated dashboards, subscription-based access control, and persistent user state.
-    </p>
-    <p>
-      Auth/RLS architecture · Stripe billing + plan gating · Refresh-safe sessions · RBAC admin routing · AI tool guardrails
-    </p>
-    <p>
-      <a href="https://getsetwedding.com" target="_blank" rel="noopener">Live App</a>
-      ·
-      <a href="https://gist.github.com/eholt723/6534f912080dddfb8b3a9cc6176a90ac" target="_blank" rel="noopener">README</a>
-    </p>
-  </div>
-  <a href="https://getsetwedding.com" target="_blank" rel="noopener">
-    <img src="images/gsw.png" class="project-img" alt="Get Set Wedding"/>
   </a>
 </article>
 
@@ -186,6 +194,28 @@
   </div>
   <a href="https://eholt723.github.io/warehousebot-rl/" target="_blank" rel="noopener">
     <img src="images/WarehouseBot-RL.png" class="project-img" alt="WarehouseBot RL"/>
+  </a>
+</article>
+
+<!--6) GET SET WEDDING -->
+<article class="project">
+  <div class="project-text">
+    <h3>Get Set Wedding — Production SaaS Planning Platform</h3>
+    <p>React · TypeScript · Supabase · Stripe · Node</p>
+    <p>
+      A production-grade SaaS platform featuring authenticated dashboards, subscription-based access control, and persistent user state.
+    </p>
+    <p>
+      Auth/RLS architecture · Stripe billing + plan gating · Refresh-safe sessions · RBAC admin routing · AI tool guardrails
+    </p>
+    <p>
+      <a href="https://getsetwedding.com" target="_blank" rel="noopener">Live App</a>
+      ·
+      <a href="https://gist.github.com/eholt723/6534f912080dddfb8b3a9cc6176a90ac" target="_blank" rel="noopener">README</a>
+    </p>
+  </div>
+  <a href="https://getsetwedding.com" target="_blank" rel="noopener">
+    <img src="images/gsw.png" class="project-img" alt="Get Set Wedding"/>
   </a>
 </article>
 
