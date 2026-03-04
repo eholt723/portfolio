@@ -44,7 +44,7 @@
 <article class="project">
   <div class="project-text">
     <h3>TraceAgent — Observable Agentic Research Platform</h3>
-    <p>Python · FastAPI · Groq · Tavily · React · PostgreSQL · Docker</p>
+    <p>Python · FastAPI · Groq · Tavily · React · PostgreSQL · Docker · AWS</p>
     <p>
       A custom agentic pipeline with four sequential stages — planner, search, reflection, and synthesis —
       where the reflection stage explicitly evaluates whether search results are sufficient and conditionally
@@ -52,10 +52,11 @@
       decision is persisted to the database and streamed to the browser in real time via WebSocket.
     </p>
     <p>
-      Deployed to Hugging Face Spaces as a single Dockerized service · Multi-stage build bundles React/Vite
-      frontend with FastAPI backend · Neon serverless PostgreSQL for persistent run history · Public activity
-      wall with full step traces · Fork any run with a modified query, lineage tracked · Side-by-side
-      comparison of two runs
+      Deployed to both Hugging Face Spaces (Docker) and AWS EC2 (t3.micro) + RDS PostgreSQL (db.t4g.micro,
+      VPC-only) · CloudWatch Logs via watchtower · 6 custom CloudWatch Metrics per run (RunsCompleted,
+      PipelineDurationMs, ReflectionLoops, and more) feeding a live pipeline dashboard · Multi-stage build
+      bundles React/Vite frontend with FastAPI backend · Fork any run with a modified query, lineage
+      tracked · Side-by-side comparison of two runs
     </p>
     <p>
       <a href="https://eholt723-traceagent.hf.space/" target="_blank" rel="noopener">Live Demo</a>
@@ -63,6 +64,8 @@
       <a href="https://github.com/eholt723/traceagent" target="_blank" rel="noopener">Code</a>
       ·
       <a href="https://github.com/eholt723/traceagent#readme" target="_blank" rel="noopener">README</a>
+      ·
+      <a href="http://32.192.175.42:8000" target="_blank" rel="noopener">AWS Demo</a>
     </p>
   </div>
   <a href="https://eholt723-traceagent.hf.space/" target="_blank" rel="noopener">
