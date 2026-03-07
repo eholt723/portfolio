@@ -133,13 +133,18 @@
 <!--3) AI TUTOR -->
 <article class="project">
   <div class="project-text">
-    <h3>AI Tutor — LangGraph + LoRA (TinyLlama)</h3>
-    <p>Python · LangGraph · LoRA · llama.cpp · Azure</p>
+    <h3>AI Tutor — LangGraph + QLoRA (TinyLlama)</h3>
+    <p>Python · LangGraph · QLoRA · llama.cpp · RAG · FastAPI · Azure</p>
     <p>
-      A fine-tuned educational assistant leveraging graph-based reasoning and lightweight quantized inference.
+      Built as an end-to-end ML engineering pipeline — QLoRA fine-tuning of TinyLlama-1.1B-Chat, quantized
+      GGUF inference via llama.cpp, and a RAG layer using sentence-transformers with cosine similarity
+      retrieval. LangGraph orchestrates the full workflow from model loading through evaluation.
     </p>
     <p>
-      LoRA training pipeline · Graph orchestration · Quantized model serving · Container deployment
+      Dual inference modes (base + fine-tuned) · Structured 3-part responses (Core Idea, Step-by-Step,
+      Common Mistake) · RAG with FAISS-free cosine similarity store · LangGraph pipeline: load_config →
+      prepare_data → load_models → evaluate → build_rag_index → chat · Evaluation system with lexical
+      overlap scoring · Deployed to Azure Container Apps via Docker
     </p>
     <p>
       <a href="https://eholt723.github.io/ai-tutor-langgraph/" target="_blank" rel="noopener">Live Demo</a>
