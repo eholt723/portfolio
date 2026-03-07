@@ -46,17 +46,17 @@
     <h3>TraceAgent — Observable Agentic Research Platform</h3>
     <p>Python · FastAPI · Groq · Tavily · React · PostgreSQL · Docker · AWS</p>
     <p>
-      A custom agentic pipeline with four sequential stages — planner, search, reflection, and synthesis —
-      where the reflection stage explicitly evaluates whether search results are sufficient and conditionally
-      loops back to search with refined queries before proceeding to report generation. Every internal
-      decision is persisted to the database and streamed to the browser in real time via WebSocket.
+      Built around a four-stage pipeline — planner, search, reflection, and synthesis — where the reflection
+      stage evaluates result adequacy and conditionally loops back to search (up to 3 times) with refined
+      queries before report generation. Every internal decision is persisted to PostgreSQL and streamed to
+      the browser in real time via WebSocket.
     </p>
     <p>
-      Deployed to both Hugging Face Spaces (Docker) and AWS EC2 (t3.micro) + RDS PostgreSQL (db.t4g.micro,
-      VPC-only) · CloudWatch Logs via watchtower · 6 custom CloudWatch Metrics per run (RunsCompleted,
-      PipelineDurationMs, ReflectionLoops, and more) feeding a live pipeline dashboard · Multi-stage build
-      bundles React/Vite frontend with FastAPI backend · Fork any run with a modified query, lineage
-      tracked · Side-by-side comparison of two runs
+      Deployed to Hugging Face Spaces (Docker) and AWS EC2 (t3.micro) + RDS PostgreSQL (db.t4g.micro, VPC-only) ·
+      CloudWatch Logs via watchtower · 6 custom CloudWatch Metrics per run (RunsCompleted, PipelineDurationMs,
+      ReflectionLoops, and more) feeding a live pipeline dashboard · Public activity feed — browse all runs
+      with full attribution · Fork any run with a modified query, lineage tracked · Side-by-side run comparison ·
+      Multi-stage build bundles React/Vite frontend with FastAPI backend
     </p>
     <p>
       <a href="https://eholt723-traceagent.hf.space/" target="_blank" rel="noopener">Live Demo</a>
@@ -79,13 +79,15 @@
     <h3>ReconAgent — Autonomous Web Research Agent</h3>
     <p>Python · LangGraph · FastAPI · Groq · Tavily · React · Docker</p>
     <p>
-      A LangGraph agentic pipeline with four sequential nodes — planner, search, reflection, and synthesis —
-      where the reflection node evaluates result adequacy and conditionally loops back to search with refined
-      queries before proceeding to report generation.
+      Built on a LangGraph StateGraph with four nodes — planner, search, reflection, and synthesis — where
+      the reflection node evaluates result adequacy and conditionally loops back to search (up to 2 times)
+      with refined queries before report generation. Every reasoning step streams to the frontend in real
+      time via Server-Sent Events.
     </p>
     <p>
+      SSE streams planning, searching, reflecting, and synthesis events for progressive rendering ·
       Deployed to Hugging Face Spaces as a single Dockerized service · Multi-stage build bundles React/Vite
-      frontend with FastAPI backend · SQLite persistence for research history · GitHub Actions CI/CD
+      frontend with FastAPI backend · SQLite persistence for research history
     </p>
     <p>
       <a href="https://eholt723-reconagent.hf.space/" target="_blank" rel="noopener">Live Demo</a>
@@ -106,14 +108,14 @@
     <h3>AgentFlow – AI-Powered Document Intelligence</h3>
     <p>Python · LangGraph · FastAPI · Groq · React · Docker</p>
     <p>
-      A LangGraph multi-step agent pipeline that classifies uploaded HR documents (resumes, cover letters,
-      interview notes, scorecards) and routes each to a specialized LLM analysis node returning structured
-      JSON with skills, risk flags, and hiring recommendations.
+      Built on a LangGraph multi-step agent pipeline that classifies uploaded HR documents (resumes, cover
+      letters, interview notes, scorecards, job descriptions) and routes each to a specialized LLM analysis
+      node returning structured JSON with skills, risk flags, and hiring recommendations.
     </p>
     <p>
-      Groq LLM inference + tenacity retry · Vision model support for image/handwritten docs ·
-      Deterministic classification pre-check · Single Dockerized service on Render ·
-      SQLite session persistence · n8n webhook integration
+      Groq LLM inference (llama-3.3-70b) + tenacity retry · Vision model support for image/handwritten docs
+      (llama-4-scout) · Deterministic classification pre-check · Single Dockerized service on Hugging Face
+      Spaces · SQLite session persistence · n8n webhook integration
     </p>
     <p>
       <a href="https://eholt723-agentflow.hf.space/" target="_blank" rel="noopener">Live Demo</a>
@@ -158,10 +160,14 @@
     <h3>Transportation-LLM — Local AI Chat via WebGPU</h3>
     <p>WebGPU · TypeScript · RAG · MLC-AI</p>
     <p>
-      An in-browser LLM running client-side inference with retrieval-augmented generation.
+      Built around Llama-3-8B running entirely in-browser via WebGPU — no backend, no API calls. A domain-specific
+      RAG engine using all-MiniLM-L6-v2 embeddings retrieves and ranks transportation knowledge (rail, automotive,
+      transit, standards) before augmenting each prompt, with the semantic index pre-built offline and served statically.
     </p>
     <p>
-      WebGPU acceleration · On-device inference · Vector search + prompt augmentation
+      WebGPU acceleration via @mlc-ai/web-llm · On-device inference with no server infrastructure ·
+      Semantic RAG with domain filtering, weighting, and diversification · Pre-built static index via
+      @xenova/transformers · Python RAG index builder with configurable chunking · Deployed via GitHub Pages
     </p>
     <p>
       <a href="https://eholt723.github.io/transport-llm/" target="_blank" rel="noopener">Live Demo</a>
@@ -180,12 +186,17 @@
 <article class="project">
   <div class="project-text">
     <h3>WarehouseBot-RL — Autonomous Picking Simulation</h3>
-    <p>PyTorch · Reinforcement Learning · Q-Learning</p>
+    <p>Python · stable-baselines3 · ONNX · Reinforcement Learning · Cloudflare Workers</p>
     <p>
-      A reinforcement learning agent optimizing warehouse path selection through reward-based learning.
+      Built around an RL agent trained offline with stable-baselines3 and exported to ONNX for in-browser
+      execution. The bot plans pick sequences using nearest-neighbor and 2-opt heuristics, navigates
+      obstacles via A* pathfinding, and accumulates rewards based on efficiency and safety metrics across
+      three rotating warehouse layouts.
     </p>
     <p>
-      Custom environment simulation · Q-learning policy updates · Performance evaluation
+      RL training via stable-baselines3 · ONNX export for browser compatibility · A* obstacle navigation ·
+      Nearest-neighbor + 2-opt pick sequencing · Cloudflare Workers + Durable Objects for persistent shared
+      stats across all visitors · Canvas rendering on mobile and desktop
     </p>
     <p>
       <a href="https://eholt723.github.io/warehousebot-rl/" target="_blank" rel="noopener">Live Demo</a>
@@ -206,10 +217,10 @@
     <h3>Get Set Wedding — Production SaaS Planning Platform</h3>
     <p>React · TypeScript · Supabase · Stripe · Node</p>
     <p>
-      A production-grade SaaS platform featuring authenticated dashboards, subscription-based access control, and persistent user state.
+      Built end-to-end — auth flows, Stripe billing enforcement, RLS architecture, and a context-aware AI assistant integrated with user-specific planning data.
     </p>
     <p>
-      Auth/RLS architecture · Stripe billing + plan gating · Refresh-safe sessions · RBAC admin routing · AI tool guardrails
+      Auth/RLS architecture · Stripe billing + plan gating · Refresh-safe sessions · RBAC admin routing · Context-aware AI assistant with live access to user planning data (budget, guest list, vendors) for accurate, personalized responses
     </p>
     <p>
       <a href="https://getsetwedding.com" target="_blank" rel="noopener">Live App</a>
