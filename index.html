@@ -73,7 +73,37 @@
   </a>
 </article>
 
-<!--1) RECONAGENT -->
+<!--1) AGENTMESH -->
+<article class="project">
+  <div class="project-text">
+    <h3>AgentMesh — Multi-Agent Code Review &amp; Repair System</h3>
+    <p>Python · LangGraph · FastAPI · Groq · React · Tailwind CSS · Docker</p>
+    <p>
+      Three specialized agents collaborate via a LangGraph StateGraph — Reviewer identifies issues,
+      Fixer produces corrected code with a changelog, and Evaluator scores the fix across three dimensions
+      and can reject the output and route back to Fixer with specific feedback for a second pass.
+      Every agent decision and handoff streams to the browser in real time via SSE.
+    </p>
+    <p>
+      Evaluator scoring: Correctness (40%) · Completeness (40%) · Code Quality (20%) — score 50–69 triggers
+      Fixer retry with evaluator feedback, capped at 2 passes · Structured Pydantic schemas for all inter-agent
+      state · File upload or JSON input, language auto-detection · Stateless backend · Multi-stage Docker build
+      deployed to Hugging Face Spaces
+    </p>
+    <p>
+      <a href="https://eholt723-agentmesh.hf.space/" target="_blank" rel="noopener">Live Demo</a>
+      ·
+      <a href="https://github.com/eholt723/agentmesh" target="_blank" rel="noopener">Code</a>
+      ·
+      <a href="https://github.com/eholt723/agentmesh#readme" target="_blank" rel="noopener">README</a>
+    </p>
+  </div>
+  <a href="https://eholt723-agentmesh.hf.space/" target="_blank" rel="noopener">
+    <img src="images/AgentMesh.png" alt="AgentMesh Multi-Agent Code Review and Repair System" class="project-img"/>
+  </a>
+</article>
+
+<!--2) RECONAGENT -->
 <article class="project">
   <div class="project-text">
     <h3>ReconAgent — Autonomous Web Research Agent</h3>
