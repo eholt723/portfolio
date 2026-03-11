@@ -132,34 +132,6 @@
   </a>
 </article>
 
-<!--2) RECONAGENT -->
-<article class="project">
-  <div class="project-text">
-    <h3>ReconAgent — Autonomous Web Research Agent</h3>
-    <p>Python · LangGraph · FastAPI · Groq · Tavily · React · Docker</p>
-    <p>
-      Built on a LangGraph StateGraph with four nodes — planner, search, reflection, and synthesis — where
-      the reflection node evaluates result adequacy and conditionally loops back to search (up to 2 times)
-      with refined queries before report generation. Every reasoning step streams to the frontend in real
-      time via Server-Sent Events.
-    </p>
-    <p>
-      SSE streams planning, searching, reflecting, and synthesis events for progressive rendering ·
-      Deployed to Hugging Face Spaces as a single Dockerized service · Multi-stage build bundles React/Vite
-      frontend with FastAPI backend · SQLite persistence for research history
-    </p>
-    <p>
-      <a href="https://eholt723-reconagent.hf.space/" target="_blank" rel="noopener">Live Demo</a>
-      ·
-      <a href="https://github.com/eholt723/reconagent" target="_blank" rel="noopener">Code</a>
-      ·
-      <a href="https://github.com/eholt723/reconagent#readme" target="_blank" rel="noopener">README</a>
-    </p>
-  </div>
-  <a href="https://eholt723-reconagent.hf.space/" target="_blank" rel="noopener">
-    <img src="images/ReconAgent.png" alt="ReconAgent Autonomous Web Research Agent" class="project-img"/>
-  </a>
-</article>
 
 <!--2) AGENTFLOW -->
 <article class="project">
@@ -281,10 +253,10 @@
     <h3>Get Set Wedding — Production SaaS Planning Platform</h3>
     <p>React · TypeScript · Supabase · Stripe · Node</p>
     <p>
-      Built end-to-end — auth flows, Stripe billing enforcement, RLS architecture, and a context-aware AI assistant integrated with user-specific planning data.
+      Built end-to-end as contract full-stack developer — database schema, PostgreSQL RLS for structural multi-tenant isolation, Stripe billing with webhook-driven server-side enforcement, and a context-aware AI assistant integrated with live user planning data.
     </p>
     <p>
-      Auth/RLS architecture · Stripe billing + plan gating · Refresh-safe sessions · RBAC admin routing · Context-aware AI assistant with live access to user planning data (budget, guest list, vendors) for accurate, personalized responses
+      PostgreSQL-layer RLS (structural isolation, not application-level) · Webhook-driven Stripe pipeline — server-side enforcement on every API request prevents client-side bypass · Refresh-safe JWT session rehydration · Demo-to-account conversion with isolated storage scopes · RBAC admin routing · AI assistant with live access to user planning data (budget, guest list, vendors)
     </p>
     <p>
       <a href="https://getsetwedding.com" target="_blank" rel="noopener">Live App</a>
