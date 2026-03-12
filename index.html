@@ -102,7 +102,38 @@
   </a>
 </article>
 
-<!--2) AGENTMESH -->
+<!--2) REPOSIGNAL -->
+<article class="project">
+  <div class="project-text">
+    <h3>RepoSignal — GitHub Issues Analytics Dashboard</h3>
+    <p>Python · FastAPI · Groq · PostgreSQL · React · Vite · Tailwind CSS · Recharts · Docker</p>
+    <p>
+      Enter any public GitHub repo and RepoSignal fetches up to 50 issues via the GitHub REST API,
+      classifies each one by type, priority, and sentiment using an LLM (parallelized with a concurrency
+      cap to stay within Groq rate limits), persists results to PostgreSQL, and renders a live analytics
+      dashboard. Select any open issue to stream an AI-drafted triage response word-by-word in real time.
+    </p>
+    <p>
+      SQL-powered dashboard: COUNT + GROUP BY, time-series grouping by week, JOIN across issues and
+      classifications · Filterable issue table by type and priority · SSE-streamed AI triage drafts ·
+      Repo history — previously analyzed repos saved to DB and re-loadable from the landing page ·
+      9 API routes with full unit + integration test coverage · Multi-stage Docker build · Deployed to
+      Hugging Face Spaces
+    </p>
+    <p>
+      <a href="https://eholt723-reposignal.hf.space/" target="_blank" rel="noopener">Live Demo</a>
+      ·
+      <a href="https://github.com/eholt723/reposignal" target="_blank" rel="noopener">Code</a>
+      ·
+      <a href="https://github.com/eholt723/reposignal#readme" target="_blank" rel="noopener">README</a>
+    </p>
+  </div>
+  <a href="https://eholt723-reposignal.hf.space/" target="_blank" rel="noopener">
+    <img src="images/RepoSignal.png" alt="RepoSignal GitHub Issues Analytics Dashboard" class="project-img"/>
+  </a>
+</article>
+
+<!--3) AGENTMESH -->
 <article class="project">
   <div class="project-text">
     <h3>AgentMesh — Multi-Agent Code Review &amp; Repair System</h3>
