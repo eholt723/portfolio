@@ -475,14 +475,19 @@ document.getElementById('y').textContent = new Date().getFullYear();
 
   const ctx = document.getElementById('commitChart').getContext('2d');
   new Chart(ctx, {
-    type: 'bar',
+    type: 'line',
     data: {
       labels,
       datasets: [{
         data: days,
-        backgroundColor: '#0097A7',
-        borderRadius: 3,
-        borderSkipped: false
+        borderColor: '#0097A7',
+        backgroundColor: 'rgba(0, 151, 167, 0.15)',
+        borderWidth: 2,
+        fill: true,
+        tension: 0.4,
+        pointRadius: 3,
+        pointBackgroundColor: '#0097A7',
+        pointHoverRadius: 5
       }]
     },
     options: {
