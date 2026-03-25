@@ -102,7 +102,36 @@
   </a>
 </article>
 
-<!--1) REPOSIGNAL -->
+<!--3) DAILYSIGNAL -->
+<article class="project">
+  <div class="project-text">
+    <h3>DailySignal — Automated AI News Briefing Service</h3>
+    <p>Python · GitHub Actions · Groq · PostgreSQL · Neon · Resend · React · Recharts · Docker · Hugging Face Spaces</p>
+    <p>
+      Twice-daily AI news briefing service — fully automated from fetch to inbox with zero manual steps.
+      GitHub Actions cron pulls from HackerNews, Product Hunt, and five RSS feeds, deduplicates via
+      SHA-256 hashing, synthesizes a structured briefing via Groq, and delivers it to subscribers via Resend.
+    </p>
+    <p>
+      GitHub Actions cron scheduling — no always-on server required · Cross-source deduplication using
+      SHA-256 content hashes · Per-subscriber unsubscribe tokens with automatic deactivation after 3 failed
+      deliveries · PostgreSQL audit log per subscriber per run · 55 unit tests, 98% coverage · Deployed to
+      Hugging Face Spaces with Neon serverless PostgreSQL
+    </p>
+    <p>
+      <a href="https://eholt723-dailysignal.hf.space/" target="_blank" rel="noopener">Live Demo</a>
+      ·
+      <a href="https://github.com/eholt723/dailysignal" target="_blank" rel="noopener">Code</a>
+      ·
+      <a href="https://github.com/eholt723/dailysignal#readme" target="_blank" rel="noopener">README</a>
+    </p>
+  </div>
+  <a href="https://eholt723-dailysignal.hf.space/" target="_blank" rel="noopener">
+    <img src="images/DailySignal.png" alt="DailySignal Automated AI News Briefing Service" class="project-img"/>
+  </a>
+</article>
+
+<!--4) REPOSIGNAL -->
 <article class="project">
   <div class="project-text">
     <h3>RepoSignal — GitHub Issues Analytics Dashboard</h3>
@@ -339,7 +368,7 @@
 <p>
 I design and build full-stack AI systems focused on real-world deployment, observability, and scalable architecture, combining agent orchestration, semantic search, and cloud infrastructure.
 <br><br>
-My work spans multi-step agentic pipelines with conditional looping and self-evaluation, RAG systems with pgvector and cited retrieval, React/Vite frontends with live SSE and WebSocket streaming, and production SaaS with Stripe billing and PostgreSQL RLS. I instrument systems with custom CloudWatch metrics and live dashboards, and ship with CI/CD pipelines. Not just working prototypes, but production-grade services with monitoring and lineage.
+My work spans multi-step agentic pipelines with conditional looping and self-evaluation, RAG systems with pgvector and cited retrieval, React/Vite frontends with live SSE and WebSocket streaming, production SaaS with Stripe billing and PostgreSQL RLS, and automated scheduled pipelines with email delivery across multi-source data aggregation. I instrument systems with custom CloudWatch metrics and live dashboards, and ship with CI/CD pipelines. Not just working prototypes, but production-grade services with monitoring and lineage.
 </p>
 </section>
 
