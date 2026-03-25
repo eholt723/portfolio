@@ -431,7 +431,6 @@ document.getElementById('y').textContent = new Date().getFullYear();
     since.setUTCHours(0, 0, 0, 0);
     const sinceISO = since.toISOString();
 
-    console.log('[chart] repos fetched:', repos.length);
     const dayCounts = new Array(30).fill(0);
     await Promise.all(repos.map(async repo => {
       try {
@@ -439,10 +438,8 @@ document.getElementById('y').textContent = new Date().getFullYear();
           `https://api.github.com/repos/${USER}/${repo.name}/commits?since=${sinceISO}&per_page=100`,
           { headers: { Accept: 'application/vnd.github+json' } }
         );
-        console.log(`[chart] ${repo.name}: status=${r.status}`);
         if (r.status === 403 || r.status === 429 || !r.ok) return;
         const commits = await r.json();
-        console.log(`[chart] ${repo.name}: commits=${Array.isArray(commits) ? commits.length : commits}`);
         if (!Array.isArray(commits)) return;
         commits.forEach(c => {
           const date = c.commit && c.commit.author && c.commit.author.date;
@@ -450,11 +447,10 @@ document.getElementById('y').textContent = new Date().getFullYear();
           const dayIdx = Math.floor((new Date(date) - since) / 86400000);
           if (dayIdx >= 0 && dayIdx < 30) dayCounts[dayIdx]++;
         });
-      } catch (e) { console.log(`[chart] ${repo.name}: error`, e); }
+      } catch (_) {}
     }));
 
     const total = dayCounts.reduce((a, b) => a + b, 0);
-    console.log('[chart] dayCounts total:', total, dayCounts);
     if (total > 0) {
       localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), days: dayCounts }));
     }
@@ -462,7 +458,11 @@ document.getElementById('y').textContent = new Date().getFullYear();
   }
 
   const days = await loadData();
-  if (!days) return;
+  if (!days) {
+    document.querySelector('.chart-wrap').innerHTML =
+      '<p style="color:rgba(255,255,255,0.4);font-size:0.85rem;padding:1rem 0;">Activity data temporarily unavailable — GitHub API rate limit. Refreshes automatically.</p>';
+    return;
+  }
 
   const labels = Array.from({ length: 30 }, (_, i) => {
     const d = new Date();
