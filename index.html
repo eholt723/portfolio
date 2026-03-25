@@ -7,6 +7,7 @@
   <meta name="description" content="Backend AI Engineer · Agent Pipelines · ML Systems" />
   <link rel="icon" type="image/png" href="images/glow_round_favicon.png" />
   <link rel="stylesheet" href="assets/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
 
   <!-- Google Analytics (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-F76L25MKH2"></script>
@@ -343,6 +344,13 @@ My work spans multi-step agentic pipelines with conditional looping and self-eva
 </section>
 
 
+<section id="commit-activity">
+<h2>Commit Activity</h2>
+<div class="chart-wrap">
+  <canvas id="commitChart" height="180"></canvas>
+</div>
+</section>
+
 <section id="contact">
 <h2>Contact</h2>
 <p>
@@ -361,6 +369,106 @@ My work spans multi-step agentic pipelines with conditional looping and self-eva
 
 <script>
 document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+
+<script>
+(async function commitChart() {
+  const CACHE_KEY = 'gh_commits_cache';
+  const CACHE_TTL = 24 * 60 * 60 * 1000;
+  const USER = 'eholt723';
+
+  async function fetchWithRetry(url) {
+    const res = await fetch(url, { headers: { Accept: 'application/vnd.github+json' } });
+    if (res.status === 202) {
+      await new Promise(r => setTimeout(r, 3000));
+      const res2 = await fetch(url, { headers: { Accept: 'application/vnd.github+json' } });
+      return res2;
+    }
+    return res;
+  }
+
+  async function loadData() {
+    const cached = localStorage.getItem(CACHE_KEY);
+    if (cached) {
+      try {
+        const { ts, weeks } = JSON.parse(cached);
+        if (Date.now() - ts < CACHE_TTL) return weeks;
+      } catch (_) {}
+    }
+
+    const reposRes = await fetch(
+      `https://api.github.com/users/${USER}/repos?per_page=100`,
+      { headers: { Accept: 'application/vnd.github+json' } }
+    );
+    if (!reposRes.ok) return null;
+    const repos = await reposRes.json();
+
+    const sums = new Array(52).fill(0);
+    await Promise.all(repos.map(async repo => {
+      try {
+        const r = await fetchWithRetry(
+          `https://api.github.com/repos/${USER}/${repo.name}/stats/commit_activity`
+        );
+        if (r.status === 403 || r.status === 429 || !r.ok) return;
+        const data = await r.json();
+        if (!Array.isArray(data)) return;
+        data.forEach((w, i) => { sums[i] = (sums[i] || 0) + (w.total || 0); });
+      } catch (_) {}
+    }));
+
+    const weeks = sums.slice(-26);
+    localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), weeks }));
+    return weeks;
+  }
+
+  function weekLabel(weeksAgo) {
+    const d = new Date();
+    d.setDate(d.getDate() - d.getDay() - weeksAgo * 7);
+    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  }
+
+  const weeks = await loadData();
+  if (!weeks) return;
+
+  const labels = Array.from({ length: 26 }, (_, i) => weekLabel(25 - i));
+
+  const ctx = document.getElementById('commitChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{
+        data: weeks,
+        backgroundColor: '#0097A7',
+        borderRadius: 3,
+        borderSkipped: false
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: ctx => `${ctx.parsed.y} commits`
+          }
+        }
+      },
+      scales: {
+        x: {
+          ticks: { color: 'rgba(255,255,255,0.5)', font: { size: 10 }, maxRotation: 45 },
+          grid: { color: '#1a2332' }
+        },
+        y: {
+          ticks: { color: 'rgba(255,255,255,0.5)', precision: 0 },
+          grid: { color: '#1a2332' },
+          beginAtZero: true
+        }
+      }
+    }
+  });
+})();
 </script>
 </body>
 </html>
