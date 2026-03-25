@@ -7,7 +7,6 @@
   <meta name="description" content="Backend AI Engineer · Agent Pipelines · ML Systems" />
   <link rel="icon" type="image/png" href="images/glow_round_favicon.png" />
   <link rel="stylesheet" href="assets/style.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
 
   <!-- Google Analytics (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-F76L25MKH2"></script>
@@ -363,6 +362,13 @@
 
 </section>
 
+<section id="commit-activity">
+<h2>GitHub Activity</h2>
+<div class="chart-wrap">
+  <canvas id="commitChart" height="180"></canvas>
+</div>
+</section>
+
 <section id="about">
 <h2>About</h2>
 <p>
@@ -370,14 +376,6 @@ I design and build full-stack AI systems focused on real-world deployment, obser
 <br><br>
 My work spans multi-step agentic pipelines with conditional looping and self-evaluation, RAG systems with pgvector and cited retrieval, React/Vite frontends with live SSE and WebSocket streaming, production SaaS with Stripe billing and PostgreSQL RLS, and automated scheduled pipelines with email delivery across multi-source data aggregation. I instrument systems with custom CloudWatch metrics and live dashboards, and ship with CI/CD pipelines. Not just working prototypes, but production-grade services with monitoring and lineage.
 </p>
-</section>
-
-
-<section id="commit-activity">
-<h2>Commit Activity</h2>
-<div class="chart-wrap">
-  <canvas id="commitChart" height="180"></canvas>
-</div>
 </section>
 
 <section id="contact">
@@ -400,6 +398,7 @@ My work spans multi-step agentic pipelines with conditional looping and self-eva
 document.getElementById('y').textContent = new Date().getFullYear();
 </script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script>
 (async function commitChart() {
   const CACHE_KEY = 'gh_commits_cache';
