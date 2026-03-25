@@ -401,20 +401,9 @@ document.getElementById('y').textContent = new Date().getFullYear();
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script>
 (async function commitChart() {
-  const CACHE_KEY = 'gh_commits_cache_d30';
+  const CACHE_KEY = 'gh_commits_cache_d30v2';
   const CACHE_TTL = 24 * 60 * 60 * 1000;
   const USER = 'eholt723';
-
-  async function fetchWithRetry(url) {
-    const delays = [3000, 6000, 10000];
-    let res = await fetch(url, { headers: { Accept: 'application/vnd.github+json' } });
-    for (const delay of delays) {
-      if (res.status !== 202) break;
-      await new Promise(r => setTimeout(r, delay));
-      res = await fetch(url, { headers: { Accept: 'application/vnd.github+json' } });
-    }
-    return res;
-  }
 
   async function loadData() {
     const cached = localStorage.getItem(CACHE_KEY);
@@ -433,35 +422,36 @@ document.getElementById('y').textContent = new Date().getFullYear();
     if (!reposRes.ok) return null;
     const repos = await reposRes.json();
 
-    // 52 weeks * 7 days = 364-element flat daily array
-    const allDays = new Array(364).fill(0);
+    // Day 0 = 29 days ago at midnight UTC, day 29 = today
+    const since = new Date();
+    since.setUTCDate(since.getUTCDate() - 29);
+    since.setUTCHours(0, 0, 0, 0);
+    const sinceISO = since.toISOString();
+
+    const dayCounts = new Array(30).fill(0);
     await Promise.all(repos.map(async repo => {
       try {
-        const r = await fetchWithRetry(
-          `https://api.github.com/repos/${USER}/${repo.name}/stats/commit_activity`
+        const r = await fetch(
+          `https://api.github.com/repos/${USER}/${repo.name}/commits?author=${USER}&since=${sinceISO}&per_page=100`,
+          { headers: { Accept: 'application/vnd.github+json' } }
         );
         if (r.status === 403 || r.status === 429 || !r.ok) return;
-        const data = await r.json();
-        if (!Array.isArray(data)) return;
-        data.forEach((w, wi) => {
-          if (!Array.isArray(w.days)) return;
-          w.days.forEach((count, di) => {
-            allDays[wi * 7 + di] += count;
-          });
+        const commits = await r.json();
+        if (!Array.isArray(commits)) return;
+        commits.forEach(c => {
+          const date = c.commit && c.commit.author && c.commit.author.date;
+          if (!date) return;
+          const dayIdx = Math.floor((new Date(date) - since) / 86400000);
+          if (dayIdx >= 0 && dayIdx < 30) dayCounts[dayIdx]++;
         });
       } catch (_) {}
     }));
 
-    // Anchor to today: index 363 = Saturday of current week,
-    // today = 363 - (6 - getDay())
-    const todayIdx = 363 - (6 - new Date().getDay());
-    const days = allDays.slice(todayIdx - 29, todayIdx + 1);
-
-    const total = days.reduce((a, b) => a + b, 0);
+    const total = dayCounts.reduce((a, b) => a + b, 0);
     if (total > 0) {
-      localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), days }));
+      localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), days: dayCounts }));
     }
-    return days;
+    return dayCounts;
   }
 
   const days = await loadData();
