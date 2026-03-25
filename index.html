@@ -406,11 +406,12 @@ document.getElementById('y').textContent = new Date().getFullYear();
   const USER = 'eholt723';
 
   async function fetchWithRetry(url) {
-    const res = await fetch(url, { headers: { Accept: 'application/vnd.github+json' } });
-    if (res.status === 202) {
-      await new Promise(r => setTimeout(r, 3000));
-      const res2 = await fetch(url, { headers: { Accept: 'application/vnd.github+json' } });
-      return res2;
+    const delays = [3000, 6000, 10000];
+    let res = await fetch(url, { headers: { Accept: 'application/vnd.github+json' } });
+    for (const delay of delays) {
+      if (res.status !== 202) break;
+      await new Promise(r => setTimeout(r, delay));
+      res = await fetch(url, { headers: { Accept: 'application/vnd.github+json' } });
     }
     return res;
   }
@@ -420,7 +421,8 @@ document.getElementById('y').textContent = new Date().getFullYear();
     if (cached) {
       try {
         const { ts, weeks } = JSON.parse(cached);
-        if (Date.now() - ts < CACHE_TTL) return weeks;
+        const total = weeks.reduce((a, b) => a + b, 0);
+        if (total > 0 && Date.now() - ts < CACHE_TTL) return weeks;
       } catch (_) {}
     }
 
@@ -445,7 +447,10 @@ document.getElementById('y').textContent = new Date().getFullYear();
     }));
 
     const weeks = sums.slice(-26);
-    localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), weeks }));
+    const total = weeks.reduce((a, b) => a + b, 0);
+    if (total > 0) {
+      localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), weeks }));
+    }
     return weeks;
   }
 
