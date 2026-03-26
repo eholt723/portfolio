@@ -1,7 +1,7 @@
 /* -------- Minimal tokens (link colors) -------- */
 :root {
-  --link: #8ec5ff;
-  --link-hover: #c3e0ff;
+  --link: #0097A7;
+  --link-hover: #00bcd4;
 }
 
 /* -------- Base / layout -------- */
