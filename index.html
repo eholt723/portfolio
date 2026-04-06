@@ -77,64 +77,34 @@
   </a>
 </article>
 
-<!--1) DOCSIGNAL -->
+<!--1) EVALBOARD -->
 <article class="project">
   <div class="project-text">
-    <h3>DocSignal — AI-Powered Documentation Intelligence</h3>
-    <p>Python · FastAPI · React · Groq · pgvector · PostgreSQL · Docker</p>
+    <h3>EvalBoard — LLM Evaluation &amp; Prompt Testing Dashboard</h3>
+    <p>Python · FastAPI · React · Groq · PostgreSQL · Neon · Docker · GitHub Actions</p>
     <p>
-      Ask natural language questions against any documentation set — DocSignal retrieves semantically
-      relevant answers with cited source passages, not just keyword matches. Ships with preset doc sets
-      (FastAPI, SQLite, Requests) and supports ingesting any PDF or URL (up to 25 pages) into a custom set.
+      Define test suites with inputs, expected outputs, and scoring criteria — then run them against one or
+      more Groq models simultaneously. Results are scored by an LLM-as-judge and stream live to the UI via SSE.
     </p>
     <p>
-      fastembed BAAI/bge-small-en-v1.5 local embeddings (no API key) · pgvector cosine similarity search ·
-      Groq LLM answer synthesis with citations and similarity scores · Analytics dashboard: query frequency,
-      top sources, volume over time · Multi-stage Docker build · Deployed to Hugging Face Spaces
+      LLM-as-judge scores each result 1–10 with pass/fail, strengths, weaknesses, and reasoning · Parallel
+      model execution for side-by-side comparison · Prompt variant management with auto-versioning · Pass rate
+      and score trend charts · CI/CD via GitHub Actions → Hugging Face Spaces · 37 pytest tests
     </p>
     <p>
-      <a href="https://eholt723-docsignal.hf.space/" target="_blank" rel="noopener">Live Demo</a>
+      <a href="https://eholt723-evalboard.hf.space/" target="_blank" rel="noopener">Live Demo</a>
       ·
-      <a href="https://github.com/eholt723/docsignal" target="_blank" rel="noopener">Code</a>
+      <a href="https://github.com/eholt723/evalboard" target="_blank" rel="noopener">Code</a>
       ·
-      <a href="https://github.com/eholt723/docsignal#readme" target="_blank" rel="noopener">README</a>
+      <a href="https://github.com/eholt723/evalboard#readme" target="_blank" rel="noopener">README</a>
     </p>
   </div>
-  <a href="https://eholt723-docsignal.hf.space/" target="_blank" rel="noopener">
-    <img src="images/DocSignal.png" alt="DocSignal AI-Powered Documentation Intelligence" class="project-img"/>
+  <a href="https://eholt723-evalboard.hf.space/" target="_blank" rel="noopener">
+    <img src="images/EvalBoard.png" alt="EvalBoard LLM Evaluation and Prompt Testing Dashboard" class="project-img"/>
   </a>
 </article>
 
-<!--2) SUPPORTDESK -->
-<article class="project">
-  <div class="project-text">
-    <h3>SupportDesk — AI-Powered Customer Support Automation</h3>
-    <p>Python · FastAPI · Groq · pgvector · React · Vite · Tailwind CSS · PostgreSQL · Docker · GitHub Actions</p>
-    <p>
-      A webhook fires when a customer submits a ticket. The backend classifies it, searches a vector knowledge
-      base for relevant documentation, and drafts a grounded reply — all before a human agent opens the ticket.
-      The agent reviews the draft and cited sources inline, edits if needed, and approves. The reply goes out
-      via Resend. Every pipeline stage is logged and broadcast to the live event dashboard in real time.
-    </p>
-    <p>
-      HMAC-SHA256 webhook verification with timestamp replay protection · Groq LLM classification (type, urgency,
-      confidence) · fastembed + pgvector cosine similarity RAG retrieval · SSE streaming for draft tokens ·
-      WebSocket live event log · Resend email delivery · 71 pytest tests · Deployed to Hugging Face Spaces (Docker)
-    </p>
-    <p>
-      <a href="https://eholt723-supportdesk.hf.space/" target="_blank" rel="noopener">Live Demo</a>
-      ·
-      <a href="https://github.com/eholt723/supportdesk" target="_blank" rel="noopener">Code</a>
-      ·
-      <a href="https://github.com/eholt723/supportdesk#readme" target="_blank" rel="noopener">README</a>
-    </p>
-  </div>
-  <a href="https://eholt723-supportdesk.hf.space/" target="_blank" rel="noopener">
-    <img src="images/SupportDesk.png" alt="SupportDesk AI-Powered Customer Support Automation" class="project-img"/>
-  </a>
-</article>
-
-<!--3) DAILYSIGNAL -->
+<!--2) DAILYSIGNAL -->
 <article class="project">
   <div class="project-text">
     <h3>DailySignal — Automated AI News Briefing Service</h3>
@@ -160,6 +130,35 @@
   </div>
   <a href="https://eholt723-dailysignal.hf.space/" target="_blank" rel="noopener">
     <img src="images/DailySignal.png" alt="DailySignal Automated AI News Briefing Service" class="project-img"/>
+  </a>
+</article>
+
+<!--3) SUPPORTDESK -->
+<article class="project">
+  <div class="project-text">
+    <h3>SupportDesk — AI-Powered Customer Support Automation</h3>
+    <p>Python · FastAPI · Groq · pgvector · React · Vite · Tailwind CSS · PostgreSQL · Docker · GitHub Actions</p>
+    <p>
+      A webhook fires when a customer submits a ticket. The backend classifies it, searches a vector knowledge
+      base for relevant documentation, and drafts a grounded reply — all before a human agent opens the ticket.
+      The agent reviews the draft and cited sources inline, edits if needed, and approves. The reply goes out
+      via Resend. Every pipeline stage is logged and broadcast to the live event dashboard in real time.
+    </p>
+    <p>
+      HMAC-SHA256 webhook verification with timestamp replay protection · Groq LLM classification (type, urgency,
+      confidence) · fastembed + pgvector cosine similarity RAG retrieval · SSE streaming for draft tokens ·
+      WebSocket live event log · Resend email delivery · 71 pytest tests · Deployed to Hugging Face Spaces (Docker)
+    </p>
+    <p>
+      <a href="https://eholt723-supportdesk.hf.space/" target="_blank" rel="noopener">Live Demo</a>
+      ·
+      <a href="https://github.com/eholt723/supportdesk" target="_blank" rel="noopener">Code</a>
+      ·
+      <a href="https://github.com/eholt723/supportdesk#readme" target="_blank" rel="noopener">README</a>
+    </p>
+  </div>
+  <a href="https://eholt723-supportdesk.hf.space/" target="_blank" rel="noopener">
+    <img src="images/SupportDesk.png" alt="SupportDesk AI-Powered Customer Support Automation" class="project-img"/>
   </a>
 </article>
 
@@ -194,25 +193,33 @@
   </a>
 </article>
 
-<!--5) GET SET WEDDING -->
+<!--5) AGENTMESH -->
 <article class="project">
   <div class="project-text">
-    <h3>Get Set Wedding — Production SaaS Planning Platform</h3>
-    <p>React · TypeScript · Supabase · Stripe · Node</p>
+    <h3>AgentMesh — Multi-Agent Code Review &amp; Repair System</h3>
+    <p>Python · LangGraph · FastAPI · Groq · React · Tailwind CSS · Docker</p>
     <p>
-      Built end-to-end as contract full-stack developer — database schema, PostgreSQL RLS for structural multi-tenant isolation, Stripe billing with webhook-driven server-side enforcement, and a context-aware AI assistant integrated with live user planning data.
+      Three specialized agents collaborate via a LangGraph StateGraph — Reviewer identifies issues,
+      Fixer produces corrected code with a changelog, and Evaluator scores the fix across three dimensions
+      and can reject the output and route back to Fixer with specific feedback for a second pass.
+      Every agent decision and handoff streams to the browser in real time via SSE.
     </p>
     <p>
-      PostgreSQL-layer RLS (structural isolation, not application-level) · Webhook-driven Stripe pipeline — server-side enforcement on every API request prevents client-side bypass · Refresh-safe JWT session rehydration · Demo-to-account conversion with isolated storage scopes · RBAC admin routing · AI assistant with live access to user planning data (budget, guest list, vendors)
+      Evaluator scoring: Correctness (40%) · Completeness (40%) · Code Quality (20%) — score 50–69 triggers
+      Fixer retry with evaluator feedback, capped at 2 passes · Structured Pydantic schemas for all inter-agent
+      state · File upload or JSON input, language auto-detection · Stateless backend · Multi-stage Docker build
+      deployed to Hugging Face Spaces
     </p>
     <p>
-      <a href="https://getsetwedding.com" target="_blank" rel="noopener">Live App</a>
+      <a href="https://eholt723-agentmesh.hf.space/" target="_blank" rel="noopener">Live Demo</a>
       ·
-      <a href="https://gist.github.com/eholt723/6534f912080dddfb8b3a9cc6176a90ac" target="_blank" rel="noopener">README</a>
+      <a href="https://github.com/eholt723/agentmesh" target="_blank" rel="noopener">Code</a>
+      ·
+      <a href="https://github.com/eholt723/agentmesh#readme" target="_blank" rel="noopener">README</a>
     </p>
   </div>
-  <a href="https://getsetwedding.com" target="_blank" rel="noopener">
-    <img src="images/gsw.png" class="project-img" alt="Get Set Wedding"/>
+  <a href="https://eholt723-agentmesh.hf.space/" target="_blank" rel="noopener">
+    <img src="images/AgentMesh.png" alt="AgentMesh Multi-Agent Code Review and Repair System" class="project-img"/>
   </a>
 </article>
 
@@ -245,38 +252,7 @@
   </a>
 </article>
 
-<!--7) AGENTMESH -->
-<article class="project">
-  <div class="project-text">
-    <h3>AgentMesh — Multi-Agent Code Review &amp; Repair System</h3>
-    <p>Python · LangGraph · FastAPI · Groq · React · Tailwind CSS · Docker</p>
-    <p>
-      Three specialized agents collaborate via a LangGraph StateGraph — Reviewer identifies issues,
-      Fixer produces corrected code with a changelog, and Evaluator scores the fix across three dimensions
-      and can reject the output and route back to Fixer with specific feedback for a second pass.
-      Every agent decision and handoff streams to the browser in real time via SSE.
-    </p>
-    <p>
-      Evaluator scoring: Correctness (40%) · Completeness (40%) · Code Quality (20%) — score 50–69 triggers
-      Fixer retry with evaluator feedback, capped at 2 passes · Structured Pydantic schemas for all inter-agent
-      state · File upload or JSON input, language auto-detection · Stateless backend · Multi-stage Docker build
-      deployed to Hugging Face Spaces
-    </p>
-    <p>
-      <a href="https://eholt723-agentmesh.hf.space/" target="_blank" rel="noopener">Live Demo</a>
-      ·
-      <a href="https://github.com/eholt723/agentmesh" target="_blank" rel="noopener">Code</a>
-      ·
-      <a href="https://github.com/eholt723/agentmesh#readme" target="_blank" rel="noopener">README</a>
-    </p>
-  </div>
-  <a href="https://eholt723-agentmesh.hf.space/" target="_blank" rel="noopener">
-    <img src="images/AgentMesh.png" alt="AgentMesh Multi-Agent Code Review and Repair System" class="project-img"/>
-  </a>
-</article>
-
-
-<!--8) AGENTFLOW -->
+<!--7) AGENTFLOW -->
 <article class="project">
   <div class="project-text">
     <h3>AgentFlow – AI-Powered Document Intelligence</h3>
@@ -301,6 +277,56 @@
   </div>
   <a href="https://eholt723-agentflow.hf.space/" target="_blank" rel="noopener">
     <img src="images/AgentFlow.png" alt="AgentFlow AI-Powered Document Intelligence" class="project-img"/>
+  </a>
+</article>
+
+<!--8) GET SET WEDDING -->
+<article class="project">
+  <div class="project-text">
+    <h3>Get Set Wedding — Production SaaS Planning Platform</h3>
+    <p>React · TypeScript · Supabase · Stripe · Node</p>
+    <p>
+      Built end-to-end as contract full-stack developer — database schema, PostgreSQL RLS for structural multi-tenant isolation, Stripe billing with webhook-driven server-side enforcement, and a context-aware AI assistant integrated with live user planning data.
+    </p>
+    <p>
+      PostgreSQL-layer RLS (structural isolation, not application-level) · Webhook-driven Stripe pipeline — server-side enforcement on every API request prevents client-side bypass · Refresh-safe JWT session rehydration · Demo-to-account conversion with isolated storage scopes · RBAC admin routing · AI assistant with live access to user planning data (budget, guest list, vendors)
+    </p>
+    <p>
+      <a href="https://getsetwedding.com" target="_blank" rel="noopener">Live App</a>
+      ·
+      <a href="https://gist.github.com/eholt723/6534f912080dddfb8b3a9cc6176a90ac" target="_blank" rel="noopener">README</a>
+    </p>
+  </div>
+  <a href="https://getsetwedding.com" target="_blank" rel="noopener">
+    <img src="images/gsw.png" class="project-img" alt="Get Set Wedding"/>
+  </a>
+</article>
+
+<!--9) DOCSIGNAL -->
+<article class="project">
+  <div class="project-text">
+    <h3>DocSignal — AI-Powered Documentation Intelligence</h3>
+    <p>Python · FastAPI · React · Groq · pgvector · PostgreSQL · Docker</p>
+    <p>
+      Ask natural language questions against any documentation set — DocSignal retrieves semantically
+      relevant answers with cited source passages, not just keyword matches. Ships with preset doc sets
+      (FastAPI, SQLite, Requests) and supports ingesting any PDF or URL (up to 25 pages) into a custom set.
+    </p>
+    <p>
+      fastembed BAAI/bge-small-en-v1.5 local embeddings (no API key) · pgvector cosine similarity search ·
+      Groq LLM answer synthesis with citations and similarity scores · Analytics dashboard: query frequency,
+      top sources, volume over time · Multi-stage Docker build · Deployed to Hugging Face Spaces
+    </p>
+    <p>
+      <a href="https://eholt723-docsignal.hf.space/" target="_blank" rel="noopener">Live Demo</a>
+      ·
+      <a href="https://github.com/eholt723/docsignal" target="_blank" rel="noopener">Code</a>
+      ·
+      <a href="https://github.com/eholt723/docsignal#readme" target="_blank" rel="noopener">README</a>
+    </p>
+  </div>
+  <a href="https://eholt723-docsignal.hf.space/" target="_blank" rel="noopener">
+    <img src="images/DocSignal.png" alt="DocSignal AI-Powered Documentation Intelligence" class="project-img"/>
   </a>
 </article>
 
