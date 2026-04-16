@@ -193,7 +193,38 @@
   </a>
 </article>
 
-<!--5) AGENTMESH -->
+<!--5) COMMDESK -->
+<article class="project">
+  <div class="project-text">
+    <h3>CommDesk — Multi-User Real-Time Operations Dashboard</h3>
+    <p>TypeScript · Node.js · Express · React · PostgreSQL · Docker · GitHub Actions</p>
+    <p>
+      Each incoming event follows a defined lifecycle — fired by any connected client, persisted to PostgreSQL,
+      broadcast to every open WebSocket simultaneously, then resolved from processing to success or error after
+      a 4-second window. New clients receive the last 50 events on connect so no one starts with a blank screen.
+    </p>
+    <p>
+      Health panel tracks all-time total (seeded from DB on startup) and per-session counters alongside active
+      connection count and a real error rate driven only by genuine DB failures · Presence tracking assigns
+      initials and avatar color to each connection, updating all clients on join and disconnect · Multi-stage
+      Dockerfile builds React/Vite frontend and compiles TypeScript server into a single production image ·
+      Jest unit tests with mocked dependencies + integration tests against a live Neon database · GitHub
+      Actions CI/CD — passing builds deploy automatically to Hugging Face Spaces
+    </p>
+    <p>
+      <a href="https://eholt723-commdesk.hf.space/" target="_blank" rel="noopener">Live Demo</a>
+      ·
+      <a href="https://github.com/eholt723/commdesk" target="_blank" rel="noopener">Code</a>
+      ·
+      <a href="https://github.com/eholt723/commdesk#readme" target="_blank" rel="noopener">README</a>
+    </p>
+  </div>
+  <a href="https://eholt723-commdesk.hf.space/" target="_blank" rel="noopener">
+    <img src="images/CommDesk.png" alt="CommDesk Multi-User Real-Time Operations Dashboard" class="project-img"/>
+  </a>
+</article>
+
+<!--6) AGENTMESH -->
 <article class="project">
   <div class="project-text">
     <h3>AgentMesh — Multi-Agent Code Review &amp; Repair System</h3>
