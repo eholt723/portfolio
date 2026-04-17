@@ -179,10 +179,14 @@ footer {
 .project-img {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  position: relative;
+  z-index: 1;
 }
 
 .project-img:hover {
-  transform: scale(1.08);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  transform: scale(1.25);
+  box-shadow: 0 0 36px rgba(0, 151, 167, 0.45), 0 16px 48px rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  position: relative;
 }
 
