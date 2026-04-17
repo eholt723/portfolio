@@ -397,11 +397,24 @@
 </section>
 
 <section id="commit-activity">
-<h2>GitHub Activity</h2>
-<div class="chart-wrap">
-  <canvas id="commitChart" height="180"></canvas>
-</div>
+  <h2>GitHub Activity</h2>
+  <div class="contrib-stat">
+    <span id="contrib-count" class="contrib-number">—</span>
+    <span class="contrib-label">contributions in the last year &nbsp;·&nbsp; <a href="https://github.com/eholt723" target="_blank" rel="noopener">github.com/eholt723</a></span>
+  </div>
 </section>
+
+<script>
+  fetch('https://github-contributions-api.jogruber.de/v4/eholt723?y=last')
+    .then(function(r) { return r.ok ? r.json() : Promise.reject(); })
+    .then(function(data) {
+      var total = data.contributions.reduce(function(sum, d) { return sum + d.count; }, 0);
+      document.getElementById('contrib-count').textContent = total.toLocaleString();
+    })
+    .catch(function() {
+      document.getElementById('commit-activity').style.display = 'none';
+    });
+</script>
 
 <section id="about">
 <h2>About</h2>
