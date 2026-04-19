@@ -108,7 +108,7 @@
 <article class="project">
   <div class="project-text">
     <h3>DailySignal — Automated AI News Briefing Service</h3>
-    <p>Python · GitHub Actions · Groq · PostgreSQL · Neon · Resend · React · Recharts · Docker · Hugging Face Spaces</p>
+    <p>Python · FastMCP · GitHub Actions · Groq · PostgreSQL · Neon · Resend · React · Recharts · Docker · Hugging Face Spaces</p>
     <p>
       Twice-daily AI news briefing service — fully automated from fetch to inbox with zero manual steps.
       GitHub Actions cron pulls from HackerNews, Product Hunt, and five RSS feeds, deduplicates via
@@ -117,8 +117,10 @@
     <p>
       GitHub Actions cron scheduling — no always-on server required · Cross-source deduplication using
       SHA-256 content hashes · Per-subscriber unsubscribe tokens with automatic deactivation after 3 failed
-      deliveries · PostgreSQL audit log per subscriber per run · 55 unit tests, 98% coverage · Deployed to
-      Hugging Face Spaces with Neon serverless PostgreSQL
+      deliveries · PostgreSQL audit log per subscriber per run · FastMCP server mounted at /mcp — three tools
+      (get_latest_briefing, get_run_history, get_subscriber_stats) let any MCP-compatible AI agent query live
+      briefing data and delivery stats directly · 55 unit tests, 98% coverage · Deployed to Hugging Face Spaces
+      with Neon serverless PostgreSQL
     </p>
     <p>
       <a href="https://eholt723-dailysignal.hf.space/" target="_blank" rel="noopener">Live Demo</a>
