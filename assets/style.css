@@ -175,6 +175,19 @@ footer {
   color: rgba(255, 255, 255, 0.7);
 }
 
+/* -------- Certifications -------- */
+.cert-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+}
+
+.cert-list li {
+  padding: 0.3rem 0;
+  font-size: 0.95rem;
+  color: #ffffff;
+}
+
 /* -------- Hover zoom effect on project images -------- */
 .project-img {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
